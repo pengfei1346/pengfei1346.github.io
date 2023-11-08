@@ -93,5 +93,7 @@ jobs:
 
 > 这时候我们每次写完博客，将工程代码push到GitHub仓库之后，GitHub会自动触发构建和发布流程，更新博客网站。上一节中的手动构建和上传dist步骤就不需要执行了
 
+> 注意这里分支要改成gh-pages分支
+
 打开GitHub配置，位置依旧在Settings -> Pages -> Build and deployment -> Source。将之前设置的Deploy from a branch，修改为GitHub Actions。
 
