@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
+  title: "我的小书房",
   description: "个人记录",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

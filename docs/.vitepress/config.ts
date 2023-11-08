@@ -10,12 +10,12 @@ export default defineConfig({
             {
                 text: '2023',
                 items: [
-                    { text: '使用VitePress和Github搭建个人博客，可以自动构建和发布', link: '/2023/blog-github' },
+                    { text: '搭建个人博客', link: '/2023/blog-github' },
                 ],
             },
         ],
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/jzplp/jzplp.github.io' }
+            { icon: 'github', link: 'https://github.com/pengfei1346/pengfei1346.github.io' }
         ]
     }
 })
