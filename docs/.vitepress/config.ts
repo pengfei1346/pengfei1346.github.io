@@ -140,10 +140,10 @@ export default defineConfig({
         lastUpdatedText: '上次更新于',
         logo: '',
         nav: [
-            // {
-            //   text: '关于我',
-            //   link: '/aboutme'
-            // },
+            {
+              text: '关于',
+              link: '/about'
+            },
             {
                 text: '笔记',
                 items: [
