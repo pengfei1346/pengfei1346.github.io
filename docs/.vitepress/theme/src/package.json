@@ -1,0 +1,70 @@
+{
+  "name": "@sugarat/theme",
+  "version": "0.2.6",
+  "description": "简约风的 Vitepress 博客主题，sugarat vitepress blog theme",
+  "author": "sugar",
+  "license": "MIT",
+  "homepage": "https://theme.sugarat.top",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATQQ/sugar-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ATQQ/sugar-blog/issues"
+  },
+  "keywords": [
+    "vitepress",
+    "theme",
+    "粥里有勺糖"
+  ],
+  "exports": {
+    "./node": {
+      "types": "./node.d.ts",
+      "default": "./node.js"
+    },
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "files": [
+    "node.d.ts",
+    "node.js",
+    "src",
+    "types"
+  ],
+  "dependencies": {
+    "@giscus/vue": "^2.3.0",
+    "@mdit-vue/shared": "^0.12.0",
+    "@mermaid-js/mermaid-mindmap": "^9.3.0",
+    "@vue/shared": "^3.2.45",
+    "@vueuse/core": "^9.6.0",
+    "fast-glob": "^3.2.12",
+    "gray-matter": "^4.0.3",
+    "mermaid": "^10.2.4",
+    "vitepress-plugin-mermaid": "2.0.13",
+    "vitepress-plugin-pagefind": "0.2.10",
+    "vitepress-plugin-rss": "0.1.3",
+    "vitepress-plugin-tabs": "0.2.0"
+  },
+  "devDependencies": {
+    "@documate/documate": "^0.2.1",
+    "@documate/vue": "^0.3.1",
+    "@element-plus/icons-vue": "^2.1.0",
+    "element-plus": "^2.3.4",
+    "pagefind": "1.0.3",
+    "sass": "^1.56.1",
+    "typescript": "^4.8.2",
+    "vitepress": "1.0.0-rc.20",
+    "vue": "^3.3.4"
+  },
+  "scripts": {
+    "dev": "npm run build:node && npm run dev:docs",
+    "dev:docs": "vitepress dev docs",
+    "dev:node": "npx tsup",
+    "build": "npm run build:node && npm run build:docs",
+    "build:docs": "vitepress build docs",
+    "build:node": "npx tsup",
+    "serve": "vitepress serve docs",
+    "documate:upload": "documate upload"
+  }
+}
