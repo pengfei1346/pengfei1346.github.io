@@ -2,7 +2,7 @@
 ### 目录结构
 
 ```text
-jzplp.github.io
+.github.io
 ├─.github           # github配置
 │  └─workflows      # 自动构建部署配置
 ├─bin               # 发布脚本
