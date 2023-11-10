@@ -1,4 +1,4 @@
-// import process from 'node:process'
+import process from 'node:process'
 import { defineConfig, getThemeConfig } from '@sugarat/theme/node'
 // import type { Theme } from '@sugarat/theme'
 // import { cursorEffects } from '@anyfork/vuepress-plugin-cursor-effects-next'
@@ -7,7 +7,26 @@ import { defineConfig, getThemeConfig } from '@sugarat/theme/node'
 // import { sakura } from '@anyfork/vuepress-plugin-sakura-next'
 
 
-const baseUrl = ''
+const baseUrl = '/'
+
+const extraHead: any
+    = process.env.NODE_ENV === 'production'
+    ? [
+        [
+            'script',
+            {
+                charset: 'UTF-8',
+                id: 'LA_COLLECT',
+                src: '//sdk.51.la/js-sdk-pro.min.js'
+            }
+        ],
+        [
+            'script',
+            {},
+            'LA.init({id: "Jgmg5avjAUvoyePS",ck: "Jgmg5avjAUvoyePS",hashMode: true})'
+        ],
+    ]
+    : []
 
 const blogTheme = getThemeConfig({
     themeColor: 'el-blue',
@@ -98,7 +117,7 @@ export default defineConfig({
         hostname: '',
     },
     lang: 'zh-cn',
-    title: 'cpf',
+    title: '笔记',
     description:
         '个人博客，记录随笔与学习笔记',
     head: [
@@ -118,7 +137,7 @@ export default defineConfig({
         [
             'link',
             { rel: 'apple-touch-icon', href: '/favicon.ico', sizes: '180x180' }
-        ]
+        ],
     ],
     vite: {
         server: {
@@ -145,17 +164,37 @@ export default defineConfig({
               link: '/about'
             },
             {
+                text: '思维导图',
+                link: '/mapping/'
+            },
+            {
                 text: '笔记',
                 items: [
                     { text: 'vuepress搭建博客', link: '/node/blog_github' },
                 ]
             },
             {
+                text: '项目笔记',
+                items: [
+                    { text: '计算机网络', link: '/project/internet/' },
+                ]
+            },
+            {
                 text: '前端',
                 items: [
-                    { text: '基础', link: '/front/base/' },
-                    { text: '进阶', link: '/front/advance/' },
-                    { text: '设计模式', link: '/computerBase/design/' },
+                    { text: 'javascript基础', link: '/front/base/javascript/' },
+                    { text: 'css基础', link: '/front/base/css/' },
+                    { text: '设计模式', link: '/front/design/' },
+                    { text: '手写代码', link: '/front/coding/' },
+                    { text: 'typescript', link: '/front/typescript/' },
+                    { text: '性能优化', link: '/front/performance/' },
+                    { text: '工程化', link: '/front/CICD/' },
+                ]
+            },
+            {
+                text: '计算机基础',
+                items: [
+                    { text: '计算机网络', link: '/internet/' },
                 ]
             },
 
@@ -163,9 +202,7 @@ export default defineConfig({
                 text: '面试系列',
                 items: [
                     { text: '算法与数据结构', link: '/interview/algorithm/' },
-                    { text: '计算机网络', link: '/interview/internet/' },
-                    { text: '手撕代码', link: '/interview/coding/' },
-                    { text: '性能优化', link: '/interview/performance/' },
+                    { text: '常见面试题', link: '/interview/questions/' },
                     { text: '综合问题', link: '/interview/other/' },
                 ]
             }

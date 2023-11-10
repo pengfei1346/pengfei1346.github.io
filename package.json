@@ -8,7 +8,8 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "deploy:win": "powershell bin/autoDeploy.bat",
-    "deploy:mac": "sh bin/autoDeploy.sh"
+    "deploy:mac": "sh bin/autoDeploy.sh",
+    "new": "node ./script/newMd.js"
   },
   "license": "ISC",
   "dependencies": {
