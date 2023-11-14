@@ -1,6 +1,6 @@
 ---
 sidebar:
-title: npm私有仓库发布
+title: npm私有仓库
 step: 6
 isTimeLine: true
 date: 2020-09-14
@@ -9,13 +9,12 @@ tags:
 categories:
  - 
 ---
-# npm私有仓库发布
+# npm私有仓库
 
 
 ## 说明
 
 > 仓库搭建过程略
-> 
 
 ## 部署
 
@@ -29,6 +28,15 @@ docker-compose up -d --build
 停止并删除构建
 docker-compose down
 
+```
+
+docker基本命令
+
+```shell
+# 以服务方式启动
+service docker stop   
+service docker start  
+service docker restart
 ```
 
 参考：  
@@ -188,10 +196,3 @@ nrm use aicai
 ```
 yarn | npm install  
 ```
-
-
-## docker的使用
-
-service docker stop   
-service docker start  
-service docker restart

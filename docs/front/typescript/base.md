@@ -10,8 +10,93 @@ sticky: 1
 ---
 # base
 
+## 作用
+
+对于大型复杂项目来说方便代码的阅读，便于维护，不适用于一些特别灵活的场景-比如低代码。
+
+## 基础类型
+
+* boolean | string | number | array | null | undefined | bigint
+
+```ts
+let isEnable: boolean = true
+let class:string = 'cat'
+let classNum:number = 1
+let u:undefined = undefined
+let n:null = null
+let classArr: Array<string> = ['cat','dog']
+```
+
+* tuple - 元组
+
+```ts
+let tupleType: [string, boolean]
+tupleType = ['cat',1]
+```
+
+* enum - 枚举
+
+```ts
+ // 数字类枚举- 从零开始，依次递增
+enum Score {
+    BAD,
+    GOOD,
+    PERFECT
+}
+
+let sco: Score = Score.PERFECT
+
+// 字符串枚举
+enum Score1 {
+    BAD = 'BAD',
+    GOOD = 'GOOD',
+    PERFECT = 'PERFECT'
+}
+
+let sco1: Score1 = Score.PERFECT
+
+// 反向映射
+let scoName = Score[0] // BAD
+let scoVal = Score['BAD'] // 0
+
+// 异构
+enum Enum {
+    A,  // 0
+    B,  // 1
+    C = 'C', // C
+    D = 'D', // D'
+    E = 6, // 6
+    F,  // 7
+}
+```
+
+* any ｜ unknown | void
+
+```ts
+// any -> 绕过所有的类型检查
+// unknown - 绕过赋值检查 - 禁止更改传递 
+// void ｜ never
+// void - 声明函数的返回值为空或者没有返回值
+// never - 永不返回 or 永远返回error
+function error(): never {
+    throw error()
+}
+```
+
+
+```js
+// 手写ts本质 -
+let Enum
+(function (Enum) {
+    
+})(Enum || (Enum = {}))
+
+```
+
 
 ## 接口
+
+对行为具体的抽象， 具体行为由类实现
 
 * 属性类接口
 * 函数类型接口
@@ -19,6 +104,16 @@ sticky: 1
 * 类类型接口
 * 接口拓展
 
+
+```ts
+interface Class {
+    name: string,
+    // 只读
+    readonly age: string,
+    // 任意可添加属性
+    [propName: string]: any
+}
+```
 ```ts
 // 定义一个函数类型的接口
 interface Options {
@@ -230,9 +325,24 @@ console.log(pickCard(20));
 
 ```
 
+### 交叉类型
 
+```ts
+interface A {
+    a: string
+}
+interface B {
+    a: number
+    b: string
+}
+interface C {
+    c: string
+}
 
-
+// 声明一个群体
+type ABC = A & B & C
+// a: string | number
+```
 
 
 

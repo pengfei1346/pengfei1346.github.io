@@ -170,13 +170,10 @@ export default defineConfig({
             {
                 text: '笔记',
                 items: [
-                    { text: 'vuepress搭建博客', link: '/node/blog_github' },
-                ]
-            },
-            {
-                text: '项目笔记',
-                items: [
-                    { text: '计算机网络', link: '/project/internet/' },
+                    { text: '系统搭建', link: '/note/system/' },
+                    { text: 'node', link: '/note/node/' },
+                    { text: '组件库搭建', link: '/note/components/' },
+                    { text: '其他', link: '/note/other/' },
                 ]
             },
             {
