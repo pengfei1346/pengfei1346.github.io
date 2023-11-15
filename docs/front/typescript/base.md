@@ -10,13 +10,19 @@ sticky: 1
 ---
 # base
 
+## ts和js的区别
+
+* JavaScript 属于动态编程语言，而ts 属于静态编程语言。
+  * js：边解释边执行，错误只有在运行的时候才能发现
+  * ts：先编译再执行，在写的时候就会发现错误了（ts不能直接执行，需要先编译成 js ）
+
 ## 作用
 
 对于大型复杂项目来说方便代码的阅读，便于维护，不适用于一些特别灵活的场景-比如低代码。
 
 ## 基础类型
 
-* boolean | string | number | array | null | undefined | bigint
+* boolean | string | number | array | null | undefined 
 
 ```ts
 let isEnable: boolean = true
@@ -72,6 +78,12 @@ enum Enum {
 
 * any ｜ unknown | void
 
+    * any -> 有些情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。 使用 any类型来标记这些变量跳过类型检查。
+    * Void -> 当一个函数没有返回值时，你通常会见到其返回值类型是 void。**void只能赋予undefined和null**。
+    * Null 和 Undefined ->  默认情况下null和undefined是所有类型的子类型；指定了--strictNullChecks标记，null和undefined只能赋值给void和它们各自。
+    * Never -> 永不存在的值的类型；never类型是任何类型的子类型，也可以赋值给任何类型，其他类型都不能赋值给never类型
+
+
 ```ts
 // any -> 绕过所有的类型检查
 // unknown - 绕过赋值检查 - 禁止更改传递 
@@ -82,6 +94,10 @@ function error(): never {
     throw error()
 }
 ```
+
+* Object
+
+object => 非原始类型，除number，string，boolean，symbol，null或undefined之外的类型
 
 
 ```js
@@ -140,11 +156,9 @@ interface person {
     husband?: string
     // mother: string,
     // father: string,
-    [propName: string]: any, // 任意数量的其它属性
+    [propName: string]: any, // 任意数量的其它属性 -> 额外的属性检查
     func: (options: any ) => void
 }
-
-// todo 然而，最佳的方式是能够添加一个字符串索引签名，前提是你能够确定这个对象可能具有某些做为特殊用途使用的额外属性。
 
 // 定义一个男性未婚，web前端程序员
 
@@ -286,7 +300,7 @@ let cc:Child = {
 
 
 
-## 函数
+## 函数类型 
 
 ```ts
 // 函数定义
@@ -344,6 +358,7 @@ type ABC = A & B & C
 // a: string | number
 ```
 
+## 
 
 
 
