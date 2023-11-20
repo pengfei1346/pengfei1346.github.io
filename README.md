@@ -42,3 +42,13 @@ sticky: 1
 ---
 
 ```
+
+
+## 创建md文档
+
+pnpm run 路径/路径1 文件名
+
+```shell
+pnpm run new interview/algorithm tree
+```
+

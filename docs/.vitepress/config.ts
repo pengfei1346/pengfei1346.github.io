@@ -173,6 +173,7 @@ export default defineConfig({
                     { text: '系统搭建', link: '/note/system/' },
                     { text: 'node', link: '/note/node/' },
                     { text: '组件库搭建', link: '/note/components/' },
+                    { text: '微前端', link: '/note/microapp/' },
                     { text: '其他', link: '/note/other/' },
                 ]
             },
