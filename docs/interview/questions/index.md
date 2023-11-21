@@ -19,7 +19,9 @@ group:
 * [输入url发生了什么](./输入url发生了什么.md)
 * [var、let、const的区别?](./var、let、const的区别.md)
 * [script标签中async和defer的区别是什么](./script标签中async和defer的区别是什么.md)
-* [计算字母数量](./计算字母数量.md)
+* [说说 Vue 和 React 的区别](./说说 Vue 和 React 的区别.md)
+* [js中精度损失问题](./js中精度损失问题.md)
+
 
 
 
