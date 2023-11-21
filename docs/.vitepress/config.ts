@@ -180,13 +180,14 @@ export default defineConfig({
             {
                 text: '前端',
                 items: [
-                    { text: 'javascript基础', link: '/front/base/javascript/' },
-                    { text: 'css基础', link: '/front/base/css/' },
+                    { text: 'javascript', link: '/front/javascript/' },
+                    { text: 'typescript', link: '/front/typescript/' },
+                    { text: 'css', link: '/front/css/' },
                     { text: '设计模式', link: '/front/design/' },
                     { text: '手写代码', link: '/front/coding/' },
-                    { text: 'typescript', link: '/front/typescript/' },
                     { text: '性能优化', link: '/front/performance/' },
                     { text: '工程化', link: '/front/CICD/' },
+                    { text: 'Web Worker', link: '/front/Web-Worker/' },
                 ]
             },
             {

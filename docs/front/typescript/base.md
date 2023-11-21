@@ -116,10 +116,24 @@ let Enum
 
 * 属性类接口
 * 函数类型接口
-* 可索引接口
+* 可索引接口 (自定义属性)
 * 类类型接口
 * 接口拓展
 
+**可索引接口 (自定义属性)**
+
+```ts
+interface RandomKey {
+    [propName: string]: string
+}
+
+const obj: RandomKey = {
+    a: 'hello',
+    b: 'lin',
+    c: 'welcome',
+}
+
+```
 
 ```ts
 interface Class {
@@ -358,7 +372,268 @@ type ABC = A & B & C
 // a: string | number
 ```
 
-## 
+## 类
+
+### TS 通过 public、private、protected 三个修饰符来增强了 JS 中的类。
+
+**基本写法**
+
+```ts
+class Person {
+    name: string
+    constructor(name: string) {
+        this.name = name
+    }
+    speak() {
+        console.log(`${this.name} is speaking`)
+    }
+}
+
+const p1 = new Person('lin')      // 新建实例  
+
+p1.name                           // 访问属性和方法
+p1.speak()
+```
+
+**继承**
+
+使用 extends 关键字实现继承，定义一个 Student 类继承自 Person 类。
+
+```ts
+class Student extends Person {
+    study() {
+        console.log(`${this.name} needs study`)
+    }
+}
+
+const s1 = new Student('lin')
+
+s1.study()
+
+```
+
+**super关键字**
+
+注意，上例中 Student 类没有定义自己的属性，可以不写 super ，但是如果 Student 类有自己的属性，就要用到 super 关键字来把父类的属性继承过来。
+
+比如，Student 类新增一个 grade(成绩) 属性，就要这么写
+
+```ts
+class Student extends Person {
+    grade: number
+    constructor(name: string,grade:number) {
+        super(name)
+        this.grade = grade
+    }
+}
+
+const s1 = new Student('lin', 100)
+
+```
+
+**多态**
+
+子类对父类的方法进行了重写，子类和父类调同一个方法时会不一样。
+
+```ts
+class Student extends Person {
+    speak() {
+        return `Student ${super.speak()}`
+    }
+}
+
+```
+
+**public**
+
+public，公有的，一个类里默认所有的方法和属性都是 public。
+
+比如上文中定义的 Person 类，其实是这样的：
+
+```ts
+// public 可写可不写，不写默认也是 public。
+class Person {
+    public name: string
+    public constructor(name: string) {
+        this.name = name
+    }
+    public speak() {
+        console.log(`${this.name} is speaking`)
+    }
+}
+```
+
+
+**private**
+
+private，私有的，只属于这个类自己，它的实例和继承它的子类都访问不到。
+
+将 Person 类的 name 属性改为 private。
+
+```ts
+class Person {
+    private name: string
+    public constructor(name: string) {
+        this.name = name
+    }
+    public speak() {
+        console.log(`${this.name} is speaking`)
+    }
+}
+const p1 = new Person('p1')// 实例访问 name 属性，会报错：
+//继承它的子类 访问 name 属性，会报错：
+```
+
+**protected**
+
+protected 受保护的，继承它的子类可以访问，实例不能访问。
+
+将 Person 类的 name 属性改为 protected。
+
+```ts
+class Person {
+    protected name: string
+    public constructor(name: string) {
+        this.name = name
+    }
+    public speak() {
+        console.log(`${this.name} is speaking`)
+    }
+}
+const p1 = new Person('p1')
+p1.name // 实例访问 name 属性，会报错：
+```
+
+子类可以访问。
+
+```ts
+class Studeng extends Person {
+    study() {
+        console.log(`${this.name} needs study`)
+    }
+}
+```
+
+**static**
+
+static 是静态属性，可以理解为是类上的一些常量，实例和子类都不能访问。
+
+比如一个 Circle 类，圆周率是 3.14，可以直接定义一个静态属性。
+
+```ts
+class Circle {
+    static pi: 3.14
+    public radius: number
+    public constructor(radius: number) {
+        this.radius = radius
+    }
+    public calcLength() {
+        return Circle.pi * this.radius * 2  // 计算周长，直接访问 Circle.pi
+    }
+}
+
+const p1 = new Person('p1')
+p1.pi // 实例访问 name 属性，会报错：
+
+```
+
+## interface 和 class 的关系
+
+上文中我们说过，interface 是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
+
+interface 同样可以用来约束 class，要实现约束，需要用到 implements 关键字。
+
+**implements** 
+
+```ts
+interface MusicInterface {
+    playMusic(): void
+}
+
+class Cellphone implements MusicInterface {
+    playMusic() {}
+}
+```
+
+定义了约束后，class 必须要满足接口上的所有条件。
+
+如果 Cellphone 类上不写 playMusic 方法，会报错。
+
+**处理公共的属性和方法**
+
+不同的类有一些共同的属性和方法，使用继承很难完成。
+比如汽车（Car 类）也有播放音乐的功能，你可以这么做：
+
+用 Car 类继承 Cellphone 类  
+找一个 Car 类和 Cellphone 类的父类，父类有播放音乐的方法，他们俩继承这个父类
+
+很显然这两种方法都不合常理。  
+实际上，使用 implements，问题就会迎刃而解。
+
+```ts
+interface MusicInterface {
+    playMusic(): void
+}
+
+class Car implements MusicInterface {
+    playMusic() {}
+}
+
+class Cellphone implements MusicInterface {
+    playMusic() {}
+}
+
+```
+这样 Car 类和 Cellphone 类都约束了播放音乐的功能。
+
+再比如，手机还有打电话的功能，就可以这么做，Cellphone 类 implements 两个 interface。
+
+```ts
+interface MusicInterface {
+    playMusic(): void
+}
+
+interface CallInterface {
+    makePhoneCall(): void
+}
+
+class Cellphone implements MusicInterface, CallInterface {
+    playMusic() {}
+    makePhoneCall() {}
+}
+
+```
+
+这个 CallInterface 也可以用于 iPad 类、手表类上面，毕竟他们也能打电话。
+
+interface 来约束 class，只要 class 实现了 interface 规定的属性或方法，就行了，没有继承那么多条条框框，非常灵活。
+
+
+**约束构造函数和静态属性**
+
+使用 implements 只能约束类实例上的属性和方法，要约束构造函数和静态属性，需要这么写。
+
+以我们上文提过的 Circle 类为例：
+
+```ts
+interface CircleStatic {
+    new (radius: number): void
+    pi: number
+}
+
+const Circle:CircleStatic = class Circle {
+    static pi: 3.14
+    public radius: number
+    public constructor(radius: number) {
+        this.radius = radius
+    }
+}
+
+```
+
+
+
+
 
 
 
