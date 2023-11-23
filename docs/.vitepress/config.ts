@@ -197,7 +197,6 @@ export default defineConfig({
                     { text: '计算机网络', link: '/internet/' },
                 ]
             },
-
             {
                 text: '面试系列',
                 items: [
@@ -205,7 +204,16 @@ export default defineConfig({
                     { text: '常见面试题', link: '/interview/questions/' },
                     { text: '综合问题', link: '/interview/other/' },
                 ]
-            }
+            },
+            {
+                text: '突击课程',
+                items: [
+                    { text: '开始', link: '/quick/start/' },
+                    { text: '常见面试题', link: '/quick/questions/' },
+                    { text: '综合问题', link: '/quick/other/' },
+                ]
+            },
+
         ],
 
         socialLinks: [
