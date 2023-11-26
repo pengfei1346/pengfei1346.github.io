@@ -192,6 +192,14 @@ export default defineConfig({
                 ]
             },
             {
+                text: '框架',
+                items: [
+                    { text: 'vue2', link: '/frame/vue2/' },
+                    { text: 'vue3', link: '/frame/vue3/' },
+                    { text: 'react', link: '/frame/react/' },
+                ]
+            },
+            {
                 text: '计算机基础',
                 items: [
                     { text: '计算机网络', link: '/internet/' },
