@@ -1,7 +1,7 @@
 ---
 sidebar:
 title: 内置组件 - Suspense
-date: 2020-09-14
+date: 2022-09-14
 tags:
 - vue3
 ---
