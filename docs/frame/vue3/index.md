@@ -26,6 +26,9 @@ vue3笔记，只记录一些关键点或者自己觉得容易忘记的，基础�
 * [模板引用](./模板引用.md)
 * [异步组件](./异步组件.md)
 
+内置指令
+
+* v-memo - v-memo="[valueA, valueB]"，仅用于性能至上场景中的微小优化
 
 内置组件
 
@@ -37,10 +40,13 @@ vue3笔记，只记录一些关键点或者自己觉得容易忘记的，基础�
   
 优化
 
-* [从 created 到 setup](./hooks.md)
-* [从 mixin 到 hooks](./hooks.md)
+* 从 created 到 setup
+* 从 mixin 到 hooks
 
+进阶
 
+* [虚拟dom和diff算法](./diff.md)
+* [web components](./web-components.md)
 
 
 
