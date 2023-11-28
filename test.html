@@ -10,17 +10,56 @@
 
 <script>
     // let a = 10
-    const b = 20
-    function foo () {
-        var a = 30
+    // const b = 20
+    // function foo () {
+    //     var a = 30
+    //
+    //     console.log(this.a)  // undefined
+    //     console.log(this.b)  // undefined
+    // }
+    // foo();
+    // console.log(window.a) // undefined
 
-        console.log(this.a)  // undefined
-        console.log(this.b)  // undefined
-    }
-    foo();
-    console.log(window.a) // undefined
+
+    // 两数之和
 
 
+    var twoSum = function(nums, target) {
+
+        let map = {}
+
+        for (let i = 0; i < nums.length; i++) {
+
+            let curTarget = target - nums[i]
+
+            if(map[curTarget] !== undefined) {
+                return [i,map[curTarget]]
+            }
+
+            map[nums[i]] = i
+        }
+
+
+    };
+
+    // console.log(twoSum([1,2,5,6,7],11));
+
+
+    /**
+     * @param {number} x
+     * @return {number}
+     */
+    var reverse = function(x) {
+        let result = 0;
+        while(x !== 0) {
+            result = result * 10 + x % 10;
+            x = Math.floor(x / 10) | 0;
+        }
+        return (result | 0) === result ? result : 0;
+    };
+
+
+    console.log(reverse(123));
 </script>
 
 </html>

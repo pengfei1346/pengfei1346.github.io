@@ -188,6 +188,7 @@ export default defineConfig({
                     { text: '手写代码', link: '/front/coding/' },
                     { text: '性能优化', link: '/front/performance/' },
                     { text: '工程化', link: '/front/CICD/' },
+                    { text: '混合开发', link: '/front/混合开发/' },
                     { text: 'Web Worker', link: '/front/Web-Worker/' },
                 ]
             },

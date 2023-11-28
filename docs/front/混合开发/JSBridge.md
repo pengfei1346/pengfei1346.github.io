@@ -21,7 +21,7 @@ tags:
 
 通过JSBridge可以实现 **H5 和 原生之间的双向通信** ，主要是给 H5 提供调用 原生（Native）功能的接口，让混合开发中的 H5 可以方便地使用地址位置、摄像头甚至支付等原生功能
 
-![img_2.png](img_2.png)
+![img_2.png](../javascript/img_2.png)
 
 ## JSBridge 的通信原理?
 
