@@ -171,6 +171,7 @@ export default defineConfig({
                 text: '笔记',
                 items: [
                     { text: '系统搭建', link: '/note/system/' },
+                    { text: 'h5', link: '/note/h5/' },
                     { text: 'node', link: '/note/node/' },
                     { text: '组件库搭建', link: '/note/components/' },
                     { text: '微前端', link: '/note/microapp/' },
