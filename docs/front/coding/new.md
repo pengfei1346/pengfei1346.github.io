@@ -4,9 +4,6 @@ group:
 title: new
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # 简介
 

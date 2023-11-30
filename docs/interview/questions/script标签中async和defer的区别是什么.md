@@ -7,8 +7,7 @@ date: 11-10-2023
 tags:
 - 算法
 - 面试
-categories:
-sticky: 1
+
 ---
 # script标签中async和defer的区别是什么
 

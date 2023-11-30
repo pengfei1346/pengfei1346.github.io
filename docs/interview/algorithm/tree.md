@@ -4,9 +4,6 @@ group:
 title: 树的遍历
 isTimeLine: true
 date: 11-17-2023
-tags:
-categories:
-sticky: 1
 ---
 # tree
 

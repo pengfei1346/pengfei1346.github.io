@@ -4,9 +4,6 @@ group:
 title: dom To vnode
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # vnode
 

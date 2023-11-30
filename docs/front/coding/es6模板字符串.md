@@ -4,9 +4,6 @@ group:
 title: es6模板字符串
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # es6模板字符串
 

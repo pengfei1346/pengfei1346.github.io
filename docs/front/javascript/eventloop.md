@@ -4,9 +4,6 @@ group:
 title: 事件轮询机制 Event Loop
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # 事件轮询机制 Event Loop
 

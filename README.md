@@ -38,7 +38,6 @@ tags:
  - js
 categories:
  - js
-sticky: 1
 ---
 
 ```

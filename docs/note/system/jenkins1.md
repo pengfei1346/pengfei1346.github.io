@@ -4,10 +4,7 @@ title: jenkins搭建
 step: 6
 isTimeLine: true
 date: 2020-09-14
-tags:
--
-categories:
-- 
+
 ---
 # jenkins搭建
 

@@ -4,9 +4,6 @@ group:
 title: call、apply、bind
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 
 # call、apply、bind 异同？

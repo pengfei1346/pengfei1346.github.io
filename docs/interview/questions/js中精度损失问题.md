@@ -4,9 +4,6 @@ group:
 title: js中精度损失问题.md
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # js中精度损失问题.md
 

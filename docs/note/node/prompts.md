@@ -4,10 +4,7 @@ title: prompts
 step: 6
 isTimeLine: true
 date: 2020-09-14
-tags:
--
-categories:
-- 
+
 ---
 # prompts
 

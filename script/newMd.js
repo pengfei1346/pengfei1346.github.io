@@ -22,9 +22,6 @@ group:
 title: ${fileName}
 isTimeLine: true
 date: ${date}
-tags:
-categories:
-sticky: 1
 ---
 # ${fileName}
 `

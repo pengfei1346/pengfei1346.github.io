@@ -1,12 +1,7 @@
 ---
-sidebar:
-group:
 title: 手写async、await
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 # 手写async、await
 

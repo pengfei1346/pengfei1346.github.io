@@ -4,9 +4,6 @@ group:
 title: render函数
 isTimeLine: true
 date: 11-10-2023
-tags:
-categories:
-sticky: 1
 ---
 
 # render函数

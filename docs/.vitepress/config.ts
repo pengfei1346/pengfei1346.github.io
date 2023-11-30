@@ -202,6 +202,12 @@ export default defineConfig({
                 ]
             },
             {
+                text: '浏览器',
+                items: [
+                    { text: '浏览器', link: '/browser/' },
+                ]
+            },
+            {
                 text: '计算机基础',
                 items: [
                     { text: '计算机网络', link: '/internet/' },
@@ -213,17 +219,9 @@ export default defineConfig({
                     { text: '算法与数据结构', link: '/interview/algorithm/' },
                     { text: '常见面试题', link: '/interview/questions/' },
                     { text: '综合问题', link: '/interview/other/' },
+                    { text: '突击课程', link: '/interview/quick/' },
                 ]
             },
-            {
-                text: '突击课程',
-                items: [
-                    { text: '开始', link: '/quick/start/' },
-                    { text: '常见面试题', link: '/quick/questions/' },
-                    { text: '综合问题', link: '/quick/other/' },
-                ]
-            },
-
         ],
 
         socialLinks: [

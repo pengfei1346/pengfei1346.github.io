@@ -1,12 +1,7 @@
 ---
-sidebar:
-group:
 title: docker
 isTimeLine: true
 date: 11-16-2023
-tags:
-categories:
-sticky: 1
 ---
 # docker
 
