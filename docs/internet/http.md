@@ -50,7 +50,41 @@ HTTP/3是基于UDP协议实现的HTTP协议版本，它是在HTTP/2的基础上�
 更好的并发性：HTTP/3引入了多路复用技术，可以同时处理多个请求和响应，提高了并发处理能力，减少了延迟和等待时间。
 支持QUIC协议：HTTP/3支持使用QUIC协议进行通信，QUIC是一种基于UDP协议的传输层协议，它能够提供更快的传输速度和更好的安全性。
 
+### HTTP/1.0与HTTP/1.1的区别
+长连接
+HTTP 1.1支持长连接（PersistentConnection）和请求的管道（Pipelining）处理，在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启Connection: Keep-Alive； HTTP1.0默认使用短连接，规定浏览器与服务器只保持短暂的连接，浏览器的每次请求都需要与服务器建立一个TCP连接，服务器完成请求处理后立即断开TCP连接，服务器不跟踪 每个客户也不记录过去的请求。要建立长连接，可以在请求消息中包含Connection: Keep-Alive头域，如果服务器愿意维持这条连接，在响应消息中也会包含一个Connection: Keep-Alive的头域。
 
+缓存处理
+
+在HTTP1.0中主要使用header里的If-Modified-Since,Expires来做为缓存判断的标准，HTTP1.1则引入了更多的缓存控制策略例如Entity tag，If-Unmodified-Since, If-Match, If-None-Match等更多可供选择的缓存头来控制缓存策略。
+
+* Expires：浏览器会在指定过期时间内使用本地缓存，指明应该在什么时候认为文档已经过期，从而不再缓存它，时间为格林威治时间GMT。例如: Expires: Thu, 19 Nov 1981 08:52:00 GMT
+* Last-Modified：请求对象最后一次的修改时间 用来判断缓存是否过期 通常由文件的时间信息产生
+* Date：生成消息的具体时间和日期，即当前的GMT时间。例如:Date: Sun, 17 Mar 2013 08:12:54 GMT
+* If-Modified-Since：客户端存取的该资源最后一次修改的时间，用来和服务器端的Last-Modified做比较
+* Set-Cookie: 用于把cookie 发送到客户端。例如: Set-Cookie: PHPSESSID=c0huq7pdkmm5gg6osoe3mgjmm3; path=/
+* Pragma:no-cache：客户端使用该头域说明请求资源不能从cache中获取，而必须回源获取。
+
+带宽优化
+HTTP1.0中，存在一些浪费带宽的现象，例如客户端只是需要某个对象的一部分，而服务器却将整个对象送过来了，并且不支持断点续传功能，HTTP1.1则在请求头引入了range头域，它允许只请求资源的某个部分，即返回码是206（Partial Content），这样就方便了开发者自由的选择以便于充分利用带宽和连接。
+
+错误通知的管理（状态码）
+在HTTP1.1中新增了24个错误状态响应码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。
+
+Host头处理
+在HTTP1.0中认为每台服务器都绑定一个唯一的IP地址，因此，请求消息中的URL并没有传递主机名（hostname）。但随着虚拟主机技术的发展，在一台物理服务器上可以存在多个虚拟主机（Multi-homed Web Servers），并且它们共享一个IP地址。HTTP1.1的请求消息和响应消息都应支持Host头域，且请求消息中如果没有Host头域会报告一个错误（400 Bad Request）。
+
+### HTTP/2与SPDY的区别
+HTTP2.0 支持明文 HTTP 传输，而 SPDY 强制使用 HTTPS
+
+HTTP2.0 消息头的压缩算法采用 「HPACK」，而非 SPDY 采用的 「DEFLATE」
+
+### HTTP/1.1与HTTP/2的区别
+
+* 「新的二进制格式」（Binary Format），HTTP1.x解析是基于文本的，基于文本协议的格式解析存在天然缺陷，文本的表现形式有多样性，要做到健壮性考虑的场景必然很多，二进制则不同，只认0和1的组合。基于这种考虑HTTP2.0的协议解析决定采用二进制格式，实现方便且健壮。
+* 「多路复用」（MultiPlexing），即连接共享，即每一个request都是是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。
+* 「header压缩」，如上文中所言，对前面提到过HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。
+* 「服务端推送」（server push），同SPDY一样，HTTP2.0也具有server push功能。
 
 ### HTTPS
 
