@@ -39,11 +39,82 @@
     const multiply = x => x * 10;
 
     const calculate = compose(multiply,add)
-    console.log(calculate(10));
+    // console.log(calculate(10));
 
 
     // return Object.prototype.toString.call(data).slice(8,-1).toLocaleUpperCase()
 
+
+    class Scheduler {
+        constructor() {
+            this.queue = [];
+            this.maxCount = 2;
+            this.runCounts = 0;
+        }
+        add(promiseCreator) {
+            this.queue.push(promiseCreator);
+        }
+        taskStart() {
+            for (let i = 0; i < this.maxCount; i++) {
+                this.request();
+            }
+        }
+        request() {
+            if (!this.queue || !this.queue.length || this.runCounts >= this.maxCount) {
+                return;
+            }
+            this.runCounts++;
+
+            this.queue.shift()().then(() => {
+                this.runCounts--;
+                this.request();
+            });
+        }
+    }
+
+    const timeout = time => new Promise(resolve => {
+        setTimeout(resolve, time);
+    })
+
+    const scheduler = new Scheduler();
+
+    const addTask = (time,order) => {
+        scheduler.add(() => timeout(time).then(()=>console.log(order)))
+    }
+
+
+    // addTask(1000, '1');
+    // addTask(500, '2');
+    // addTask(300, '3');
+    // addTask(400, '4');
+    // scheduler.taskStart()
+
+    // window.name = 'bytedance';
+    // function A() {
+    //     this.name = '123';
+    // }
+    // A.prototype.getA = function() {
+    //     console.log(this);
+    //     return this.name + 1;
+    // }
+    // let a = new A();
+    // let funcA = a.getA;
+    // funcA()
+
+
+    window.name = 'bytedance';
+    class A{
+        constructor() {
+            this.name = '123';
+        }
+        getA() {
+            console.log(this);
+            return this.name + 1;
+        }
+    }
+    let a = new A();
+    let funcA = a.getA;
+    funcA();
 </script>
 
 </html>
