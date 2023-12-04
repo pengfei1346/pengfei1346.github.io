@@ -28,12 +28,15 @@ console.log(obj); // {test:1}
 
 ```js
 function selfNew(fn, ...args) {
-  // 创建一个instance对象，该对象的原型是fn.prototype
+
+  // 创建一个新对象，该对象的原型是fn.prototype
   let instance = Object.create(fn.prototype);
+  
   // 调用构造函数，使用apply，将this指向新生成的对象
-  let res = fn.apply(instance, args);
+  let result = fn.apply(newObj, args);
+  
   // 如果fn函数有返回值，并且返回值是一个对象或方法，则返回该对象，否则返回新生成的instance对象
-  return typeof res === "object" || typeof res === "function" ? res : instance;
+  return typeof result === "object" || typeof result === "function" ? result : newObj;
 }
 ```
 

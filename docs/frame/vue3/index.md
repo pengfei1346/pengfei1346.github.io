@@ -45,7 +45,7 @@ vue3笔记，只记录一些关键点或者自己觉得容易忘记的，基础�
 
 进阶
 
-* [虚拟dom和diff算法](./diff.md)
+* [虚拟dom和diff算法 - 快速diff-最长递增子序列](./diff.md)
 * [web components](./web-components.md)
 
 

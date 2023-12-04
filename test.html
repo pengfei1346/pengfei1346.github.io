@@ -61,27 +61,182 @@
     //
     // console.log(reverse(123));
 
-    const Foo = (function () {
-        let idIndex = 1
-        return function () {
-            console.log();
-            if(!this instanceof Foo) {
-                this.id = idIndex++
-            }else {
-                return {
-                    id: idIndex++
-                }
+    // const Foo = (function () {
+    //     let idIndex = 1
+    //     return function () {
+    //         console.log();
+    //         if(!this instanceof Foo) {
+    //             this.id = idIndex++
+    //         }else {
+    //             return {
+    //                 id: idIndex++
+    //             }
+    //         }
+    //     }
+    // })()
+    //
+    // let a = new Foo()
+    // let b = Foo()
+    // console.log(b);
+
+
+
+    // 异步并发- js实现一个带并发限制的一部调度器，保证同时运行的任务最多有两个
+
+    class Scheduler {
+        add(promiseCreator) {
+
+        }
+    }
+
+    const timeout = time => new Promise(resolve => {
+        setTimeout(resolve, time);
+    })
+
+    const scheduler = new Scheduler();
+    const addTask = (time, order) => {
+        scheduler.add(() => timeout(time)).then(() => console.log(order))
+    }
+
+    // addTask(1000, '1')
+    // addTask(500, '2')
+    // addTask(300, '3')
+    // addTask(400, '4')
+
+
+    //40. 判断一个字符串是否是回文字符串？
+
+
+    // flat
+    function flat(arr) {
+        // let str = arr.toString().replaceAll('[','').replaceAll(']','')
+        // return str.split(',')
+
+        // return arr.flat(Infinity)
+
+        // return arr.reduce( (pre,cur) => {
+        //     Array.isArray(cur)?pre.push(...cur):pre.push(cur)
+        //     return pre
+        // },[])
+    }
+
+    // console.log(flat([1, 2, [3, 4], [5, 6], 7]));
+
+    // 37. 数字千分位格式化问题
+
+    // 34. 无重复字符的最长子串
+
+    function maxLenth(s) {
+        if(!s) return 0;
+        let left = 0,right = 0;
+        let maxLen = 0;
+        const map = new Map();
+        while(right < s.length) {
+            if(map.has(s[right]) && (map.get(s[right]) + 1 > left)) {
+                left = map.get(s[right]) + 1;
+            }
+            map.set(s[right], right);
+            maxLen = Math.max(maxLen, right - left + 1);
+            right ++;
+        }
+        return maxLen;
+    }
+
+    // console.log(maxLenth('abcabcbb'));
+    // "abcabcbb" => 3   "bbbbb"=>1   "pwwkew"=>3
+
+    var length = 10;
+    function fn() {
+        return this.length + 1;
+    }
+    var obj = {
+        length: 5,
+        test1: function() {
+            return fn();
+        }
+    }
+    obj.test2 = fn;
+
+    // console.log(obj.test2(1));
+    // console.log(fn() === obj.test2())
+
+
+
+    ////////////////
+    var a = function () {
+        // console.log(this);
+        // this指向window 其实修改的是 window.b
+        this.b = 3;
+    }
+
+    var c= new a();
+
+    a.prototype.b = 9;
+
+    // var声明的是全局变量 = window.b = 7
+    var b = 7;
+
+    a();
+
+    console.log(b);
+    console.log(c.b)
+
+
+    // 27. css3实现多行文字截断处理
+    //     // 单行
+    //     .oneline {
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     white-space: nowrap;
+    // }
+    // // 多行
+    // .multiple-line {
+    //     display: -webkit-box;
+    //     overflow: hidden;
+    //     -webkit-line-clamp: {行数};
+    //     -webkit-box-orient: vertical;
+    // }
+
+
+
+    // 需要实现的函数
+    function repeat(func, times, wait) {
+        return function(str) {
+            for(let i=0;i<times;i++) {
+                setTimeout(() => {
+                    func(str)
+                }, i * wait)
             }
         }
-    })()
+    }
 
-    let a = new Foo()
-    let b = Foo()
-    console.log(b);
+    // 使下面调用能正常工作
+    // const repeatFunc = repeat(console.log, 4,3000);
+    // repeatFunc('hello world'); // 会输出4次 hellow world 每次间隔3s
 
 
+    function selfNew(fn, ...args) {
+        // 创建一个新对象，该对象的原型是fn.prototype
+        let newObj = Object.create(fn.prototype);
+        // 调用构造函数，使用apply，将this指向新生成的对象
+        let result = fn.apply(newObj, args);
 
-    // 异步并发
+        // 如果fn函数有返回值，并且返回值是一个对象或方法，则返回该对象，否则返回新生成的instance对象
+        // return typeof res === "object" || typeof res === "function" ? res : instance;
+
+        return result instanceof Object ? result : newObj
+
+    }
+
+
+    function Dog(name) {
+        this.name = name;
+        return { test: 1 };
+    }
+    let obj1 = selfNew(Dog,"ming");
+    console.log(obj1); // {test:1}
+
+
 
 </script>
 
