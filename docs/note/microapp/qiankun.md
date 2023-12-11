@@ -10,7 +10,15 @@ date: 2020-09-14
 
 qiankun基于single-spa
 
-![img_2.png](img_2.png)
+QianKun 基于 single-spa ，阿里系开源的微前端框架，应该也是大家接触最多的了，社区比较活跃，这点比较重要。
+QianKun对single-spa方案进行完善，主要的完善点：
+
+* 子应用资源由 js 列表修改进为一个url，大大减轻注册子应用的复杂度  
+* 实现应用隔离，完成js隔离方案  （window工厂）  和css隔离方案  （类vue的scoped）
+* 增加资源预加载能力，预先子应用html、js、css资源缓存下来，加快子应用的打开速度
+
+
+![img_2.png](assets/img_2.png)
 
 
 ## 工作原理
@@ -125,7 +133,7 @@ div[data-qiankun="react15"] .react15-icon {
 
 当配置为 { strictStyleIsolation: true } 时， qiankun 会为每个微应用的容器包裹上一个 shadow dom
 
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 
 shadow dom 下的样式 只会应用于其内部的元素，不会泄漏到外部的文档或其他 shadow dom 中的元素；从而达到样式隔离的目的。
 
@@ -196,13 +204,7 @@ webpack和vite区别
 
 
 
-
-
-
-
-
-
-## todo
+todo
 
 * mini版qiankun手撸代码  -> 
 
