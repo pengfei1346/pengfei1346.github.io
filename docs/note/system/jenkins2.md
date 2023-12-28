@@ -1,3 +1,14 @@
+---
+sidebar:
+title: jenkins搭建（二）
+step: 6
+isTimeLine: true
+date: 2020-09-14
+
+---
+# jenkins搭建
+
+
 https://juejin.cn/post/6939812008082538504?from=search-suggest#heading-5
 https://juejin.cn/post/6899002437614223368?from=search-suggest
 

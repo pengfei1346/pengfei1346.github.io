@@ -7,6 +7,8 @@ hidden: true
 
 * [回流和重绘](./回流和重绘.md)
 * [详解输入url发生了什么](./url.md)
+* [路由基础-history](./history.md)
+
 
 **浏览器的组成**
 

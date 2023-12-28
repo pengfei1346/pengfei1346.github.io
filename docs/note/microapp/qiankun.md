@@ -8,6 +8,13 @@ date: 2020-09-14
 
 # qiankun
 
+
+* 生命周期篇；
+* IE 兼容篇；
+* 生产环境部署篇；
+* 性能优化、缓存方案篇；
+
+
 qiankun基于single-spa
 
 QianKun 基于 single-spa ，阿里系开源的微前端框架，应该也是大家接触最多的了，社区比较活跃，这点比较重要。
@@ -101,6 +108,9 @@ bindedFn(window.proxy, window.proxy, window.proxy);
 
 ## 3 种沙箱：
 
+沙箱原理实现参考--
+https://juejin.cn/post/7308583491934994470?searchId=202312051138171E5BF3CDF6DD10C77C67#heading-2
+
 SnapshotSandbox：记录 window 对象，每次 unmount 都要和微应用的环境进行 Diff
 LegacySandbox：在微应用修改 window.xxx 时直接记录 Diff，将其用于环境恢复
 ProxySandbox：为每个微应用分配一个 fakeWindow，当微应用操作 window 时，其实是在 fakeWindow 上操作
@@ -138,6 +148,54 @@ div[data-qiankun="react15"] .react15-icon {
 shadow dom 下的样式 只会应用于其内部的元素，不会泄漏到外部的文档或其他 shadow dom 中的元素；从而达到样式隔离的目的。
 
 > 需要强调的是，shadow dom 的 DOM 访问方法、样式选择器等许多特性与普通 DOM 都有所差异，因此在使用时会有许多限制，需要谨慎开启！
+
+
+## qiankun的通信设计
+
+**用法**
+
+qiankun提供了initGlobalState(state)定义全局状态，返回通信方法:
+
+* onGlobalStateChange 监听state变化，通知触发更新
+* setGlobalState 更新state
+* offGlobalStateChange 注销函数，不再监听state
+
+主应用
+
+```js
+import { initGlobalState, MicroAppStateActions } from 'qiankun';
+
+
+// 初始化 state
+const actions: MicroAppStateActions = initGlobalState(state);
+
+
+actions.onGlobalStateChange((state, prev) => {
+  // state: 变更后的状态; prev 变更前的状态
+  console.log(state, prev);
+});
+actions.setGlobalState(state);
+actions.offGlobalStateChange();
+```
+
+微应用
+
+```js
+// 从生命周期 mount 中获取通信方法，使用方式和 master 一致
+export function mount(props) {
+  props.onGlobalStateChange((state, prev) => {
+    // state: 变更后的状态; prev 变更前的状态
+    console.log(state, prev);
+  });
+
+  props.setGlobalState(state);
+}
+```
+
+**源码解析**
+
+https://juejin.cn/post/7308583491934994470?searchId=202312051138171E5BF3CDF6DD10C77C67#heading-2
+
 
 
 ## 通信 - qiankun中如何实现父子项目间的通信？如果让你实现一套通信机制，你该如何实现？
