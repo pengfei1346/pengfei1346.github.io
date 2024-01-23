@@ -1,3 +1,21 @@
+---
+isTimeLine: true
+title: webpack相关
+date: 2021-11-21
+tags:
+- 工程化
+- webpack
+---
+# webpack相关
+
+## webpack是什么？有什么作用？
+
+基于tapalble 的微内核打包工具。用来打包 js和 css。
+
+## webpack有哪几部分？
+
+entry 、 output 、 loader 、 plugin
+
 ## 有哪些常见的Loader？你用过哪些Loader？
 
 * raw-loader：加载文件原始内容（utf-8）
@@ -174,7 +192,7 @@ bundlesize 工具包可以进行自动化资源体积监控。
     * terser-webpack-plugin 开启缓存
     * 使用 cache-loader 或者 hard-source-webpack-plugin
 * Tree shaking
-    * 打包过程中检测工程中没有引用过的模块并进行标记，在资源压缩时将它们从最终的bundle中去掉(只能对ES6 Modlue生效) 开发中尽可能使用ES6 Module的模块，提高tree shaking效率   
+    * 打包过程中检测工程中没有引用过的模块并进行标记，在资源压缩时将它们从最终的bundle中去掉(只能对ES6 Modlue生效) 开发中尽可能使用ES6 Module的模块，提高tree shaking效率
     * 禁用 babel-loader 的模块依赖解析，否则 Webpack 接收到的就都是转换过的 CommonJS 形式的模块，无法进行 tree-shaking
     * 使用 PurifyCSS(不在维护) 或者 uncss 去除无用 CSS 代码
         * purgecss-webpack-plugin 和 mini-css-extract-plugin配合使用(建议)
@@ -214,11 +232,71 @@ webpack在运行的生命周期中会广播出许多事件，Plugin 可以监听
 Babel大概分为三大部分：
 
 * 解析：将代码转换成 AST
-  * 词法分析：将代码(字符串)分割为token流，即语法单元成的数组
-  * 语法分析：分析token流(上面生成的数组)并生成 AST
+    * 词法分析：将代码(字符串)分割为token流，即语法单元成的数组
+    * 语法分析：分析token流(上面生成的数组)并生成 AST
 * 转换：访问 AST 的节点进行变换操作生产新的 AST
-  * Taro就是利用 babel 完成的小程序语法转换
+    * Taro就是利用 babel 完成的小程序语法转换
 * 生成：以新的 AST 为基础生成代码
+
+
+## webpack 4 和5 有哪些区别？
+
+## webpack5 模块联邦？
+
+
+问：Webpack 配置中用过哪些 Loader ？都有什么作用？
+
+
+问：Webpack 配置中用过哪些 Plugin ？都有什么作用？
+
+
+问：Loader 和 Plugin 有什么区别？
+
+
+问：如何编写 Loader ? 介绍一下思路？
+
+
+问：如何编写 Plugin ? 介绍一下思路？
+
+
+问：Webpack optimize 有配置过吗？可以简单说说吗？
+
+
+问：Webpack 层面如何性能优化？
+
+
+问：Webpack 打包流程是怎样的？
+
+
+问：tree-shaking 实现原理是怎样的？
+
+
+问：Webpack 热更新（HMR）是如何实现？
+
+
+问：Webpack 打包中 Babel 插件是如何工作的？
+
+
+问：Webpack 和 Rollup 有什么相同点与不同点？
+
+
+问：Webpack5 更新了哪些新特性？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

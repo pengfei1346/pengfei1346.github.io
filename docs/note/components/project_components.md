@@ -43,6 +43,18 @@ project
 └─README.md         # 工程说明
 ```
 
+
+## 参考目录- todo部分
+
+```text
+components 包，作为组件库的主要代码，实现各个 UI 组件的核心逻辑。
+shared 包，主要存放各种杂七杂八的工具方法。
+theme 包，实现组件库的主题样式定制方案。
+cli 包，实现组件库模板脚手架的命令行工具。
+docs 包，组件库的示例 demo 与使用文档。
+playground 包，组件库的在线编辑、演示应用。
+```
+
 ## 说明
 
 - 开启workspace

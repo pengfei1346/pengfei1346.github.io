@@ -176,6 +176,7 @@ export default defineConfig({
                     { text: '组件库搭建', link: '/note/components/' },
                     { text: '微前端', link: '/note/microapp/' },
                     { text: '概念性知识', link: '/note/concept/' },
+                    { text: '实现方案', link: '/note/case/' },
                     { text: '其他', link: '/note/other/' },
                 ]
             },
