@@ -168,6 +168,10 @@ export default defineConfig({
                 link: '/mapping/'
             },
             {
+                text: '待办',
+                link: '/todo/'
+            },
+            {
                 text: '笔记',
                 items: [
                     { text: '系统搭建', link: '/note/system/' },

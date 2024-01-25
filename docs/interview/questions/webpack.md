@@ -244,43 +244,53 @@ Babel大概分为三大部分：
 ## webpack5 模块联邦？
 
 
-问：Webpack 配置中用过哪些 Loader ？都有什么作用？
+## 问：Webpack 配置中用过哪些 Loader ？都有什么作用？
 
 
-问：Webpack 配置中用过哪些 Plugin ？都有什么作用？
+## 问：Webpack 配置中用过哪些 Plugin ？都有什么作用？
 
 
-问：Loader 和 Plugin 有什么区别？
+## 问：Loader 和 Plugin 有什么区别？
+
+Loader 本质就是一个函数，在该函数中对接收到的内容进行转换，返回转换后的结果。
+
+因为 Webpack 只认识 JavaScript，所以 Loader 就成了翻译官，对其他类型的资源进行转译的预处理工作。
+
+Plugin 就是插件，基于事件流框架 Tapable，插件可以扩展 Webpack 的功能，在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果。
+
+Loader 在 module.rules 中配置，作为模块的解析规则，类型为数组。每一项都是一个 Object，内部包含了 test(类型文件)、loader、options (参数)等属性。
+
+Plugin 在 plugins 中单独配置，类型为数组，每一项是一个 Plugin 的实例，参数都通过构造函数传入。
 
 
-问：如何编写 Loader ? 介绍一下思路？
+## 问：如何编写 Loader ? 介绍一下思路？
 
 
-问：如何编写 Plugin ? 介绍一下思路？
+## 问：如何编写 Plugin ? 介绍一下思路？
 
 
-问：Webpack optimize 有配置过吗？可以简单说说吗？
+## 问：Webpack optimize 有配置过吗？可以简单说说吗？
 
 
-问：Webpack 层面如何性能优化？
+## 问：Webpack 层面如何性能优化？
 
 
-问：Webpack 打包流程是怎样的？
+## 问：Webpack 打包流程是怎样的？
 
 
-问：tree-shaking 实现原理是怎样的？
+## 问：tree-shaking 实现原理是怎样的？
 
 
-问：Webpack 热更新（HMR）是如何实现？
+## 问：Webpack 热更新（HMR）是如何实现？
 
 
-问：Webpack 打包中 Babel 插件是如何工作的？
+## 问：Webpack 打包中 Babel 插件是如何工作的？
 
 
-问：Webpack 和 Rollup 有什么相同点与不同点？
+## 问：Webpack 和 Rollup 有什么相同点与不同点？
 
 
-问：Webpack5 更新了哪些新特性？
+## 问：Webpack5 更新了哪些新特性？
 
 
 

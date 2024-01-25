@@ -9,6 +9,112 @@
 </body>
 
 <script>
+
+    // let compose = (...fns) => {
+    //     // 取出第一个函数，当做reduce函数的初始值
+    //     // const init = fns.shift();
+    //     // return function(...arg) {
+    //     //     // 执行compose函数，返回一个函数
+    //     //     return fns.reduce(
+    //     //         (pre, cur) => {
+    //     //             // 返回list.reduce的结果，为一个promise实例，外部就可以通过then获取
+    //     //             return pre.then(result => {
+    //     //                 // pre始终为一个promise实例，result为结果的累加值
+    //     //                 // 在前一个函数的then中，执行当前的函数，并返回一个promise实例，实现累加传递的效果
+    //     //                 return cur.call(null, result);
+    //     //             });
+    //     //         },
+    //     //         // Promise.resolve可以将非promise实例转为promise实例（一种兼容处理）
+    //     //         Promise.resolve(init.apply(null, arg))
+    //     //     );
+    //     // };
+    //
+    //     // return fns.reduce((a, b) => (...args) => a(b(...args)))
+    //     return fns.reduce((pre,cur) => (...args) => pre(cur(...args)))
+    //
+    // }
+    //
+    // const add = x => x + 10;
+    // const multiply = x => x * 10;
+    //
+    // const calculate = compose(multiply,add)
+    // // console.log(calculate(10));
+    //
+    //
+    // // return Object.prototype.toString.call(data).slice(8,-1).toLocaleUpperCase()
+    //
+    //
+    // class Scheduler {
+    //     constructor() {
+    //         this.queue = [];
+    //         this.maxCount = 2;
+    //         this.runCounts = 0;
+    //     }
+    //     add(promiseCreator) {
+    //         this.queue.push(promiseCreator);
+    //     }
+    //     taskStart() {
+    //         for (let i = 0; i < this.maxCount; i++) {
+    //             this.request();
+    //         }
+    //     }
+    //     request() {
+    //         if (!this.queue || !this.queue.length || this.runCounts >= this.maxCount) {
+    //             return;
+    //         }
+    //         this.runCounts++;
+    //
+    //         this.queue.shift()().then(() => {
+    //             this.runCounts--;
+    //             this.request();
+    //         });
+    //     }
+    // }
+    //
+    // const timeout = time => new Promise(resolve => {
+    //     setTimeout(resolve, time);
+    // })
+    //
+    // const scheduler = new Scheduler();
+    //
+    // const addTask = (time,order) => {
+    //     scheduler.add(() => timeout(time).then(()=>console.log(order)))
+    // }
+
+
+    // addTask(1000, '1');
+    // addTask(500, '2');
+    // addTask(300, '3');
+    // addTask(400, '4');
+    // scheduler.taskStart()
+
+    // window.name = 'bytedance';
+    // function A() {
+    //     this.name = '123';
+    // }
+    // A.prototype.getA = function() {
+    //     console.log(this);
+    //     return this.name + 1;
+    // }
+    // let a = new A();
+    // let funcA = a.getA;
+    // funcA()
+
+
+    // window.name = 'bytedance';
+    // class A{
+    //     constructor() {
+    //         this.name = '123';
+    //     }
+    //     getA() {
+    //         console.log(this);
+    //         return this.name + 1;
+    //     }
+    // }
+    // let a = new A();
+    // let funcA = a.getA;
+    // funcA();
+
     // let a = 10
     // const b = 20
     // function foo () {
@@ -81,44 +187,22 @@
 
 
 
-    // 异步并发- js实现一个带并发限制的一部调度器，保证同时运行的任务最多有两个
-
-    class Scheduler {
-        add(promiseCreator) {
-
-        }
-    }
-
-    const timeout = time => new Promise(resolve => {
-        setTimeout(resolve, time);
-    })
-
-    const scheduler = new Scheduler();
-    const addTask = (time, order) => {
-        scheduler.add(() => timeout(time)).then(() => console.log(order))
-    }
-
-    // addTask(1000, '1')
-    // addTask(500, '2')
-    // addTask(300, '3')
-    // addTask(400, '4')
-
 
     //40. 判断一个字符串是否是回文字符串？
 
 
     // flat
-    function flat(arr) {
-        // let str = arr.toString().replaceAll('[','').replaceAll(']','')
-        // return str.split(',')
-
-        // return arr.flat(Infinity)
-
-        // return arr.reduce( (pre,cur) => {
-        //     Array.isArray(cur)?pre.push(...cur):pre.push(cur)
-        //     return pre
-        // },[])
-    }
+    // function flat(arr) {
+    //     // let str = arr.toString().replaceAll('[','').replaceAll(']','')
+    //     // return str.split(',')
+    //
+    //     // return arr.flat(Infinity)
+    //
+    //     // return arr.reduce( (pre,cur) => {
+    //     //     Array.isArray(cur)?pre.push(...cur):pre.push(cur)
+    //     //     return pre
+    //     // },[])
+    // }
 
     // console.log(flat([1, 2, [3, 4], [5, 6], 7]));
 
@@ -126,60 +210,60 @@
 
     // 34. 无重复字符的最长子串
 
-    function maxLenth(s) {
-        if(!s) return 0;
-        let left = 0,right = 0;
-        let maxLen = 0;
-        const map = new Map();
-        while(right < s.length) {
-            if(map.has(s[right]) && (map.get(s[right]) + 1 > left)) {
-                left = map.get(s[right]) + 1;
-            }
-            map.set(s[right], right);
-            maxLen = Math.max(maxLen, right - left + 1);
-            right ++;
-        }
-        return maxLen;
-    }
-
-    // console.log(maxLenth('abcabcbb'));
-    // "abcabcbb" => 3   "bbbbb"=>1   "pwwkew"=>3
-
-    var length = 10;
-    function fn() {
-        return this.length + 1;
-    }
-    var obj = {
-        length: 5,
-        test1: function() {
-            return fn();
-        }
-    }
-    obj.test2 = fn;
-
-    // console.log(obj.test2(1));
-    // console.log(fn() === obj.test2())
-
-
-
-    ////////////////
-    var a = function () {
-        // console.log(this);
-        // this指向window 其实修改的是 window.b
-        this.b = 3;
-    }
-
-    var c= new a();
-
-    a.prototype.b = 9;
-
-    // var声明的是全局变量 = window.b = 7
-    var b = 7;
-
-    a();
-
-    console.log(b);
-    console.log(c.b)
+    // function maxLenth(s) {
+    //     if(!s) return 0;
+    //     let left = 0,right = 0;
+    //     let maxLen = 0;
+    //     const map = new Map();
+    //     while(right < s.length) {
+    //         if(map.has(s[right]) && (map.get(s[right]) + 1 > left)) {
+    //             left = map.get(s[right]) + 1;
+    //         }
+    //         map.set(s[right], right);
+    //         maxLen = Math.max(maxLen, right - left + 1);
+    //         right ++;
+    //     }
+    //     return maxLen;
+    // }
+    //
+    // // console.log(maxLenth('abcabcbb'));
+    // // "abcabcbb" => 3   "bbbbb"=>1   "pwwkew"=>3
+    //
+    // var length = 10;
+    // function fn() {
+    //     return this.length + 1;
+    // }
+    // var obj = {
+    //     length: 5,
+    //     test1: function() {
+    //         return fn();
+    //     }
+    // }
+    // obj.test2 = fn;
+    //
+    // // console.log(obj.test2(1));
+    // // console.log(fn() === obj.test2())
+    //
+    //
+    //
+    // ////////////////
+    // var a = function () {
+    //     // console.log(this);
+    //     // this指向window 其实修改的是 window.b
+    //     this.b = 3;
+    // }
+    //
+    // var c= new a();
+    //
+    // a.prototype.b = 9;
+    //
+    // // var声明的是全局变量 = window.b = 7
+    // var b = 7;
+    //
+    // a();
+    //
+    // console.log(b);
+    // console.log(c.b)
 
 
     // 27. css3实现多行文字截断处理
@@ -199,44 +283,70 @@
 
 
 
-    // 需要实现的函数
-    function repeat(func, times, wait) {
-        return function(str) {
-            for(let i=0;i<times;i++) {
-                setTimeout(() => {
-                    func(str)
-                }, i * wait)
-            }
-        }
-    }
+    // // 需要实现的函数
+    // function repeat(func, times, wait) {
+    //     return function(str) {
+    //         for(let i=0;i<times;i++) {
+    //             setTimeout(() => {
+    //                 func(str)
+    //             }, i * wait)
+    //         }
+    //     }
+    // }
 
     // 使下面调用能正常工作
     // const repeatFunc = repeat(console.log, 4,3000);
     // repeatFunc('hello world'); // 会输出4次 hellow world 每次间隔3s
 
 
-    function selfNew(fn, ...args) {
-        // 创建一个新对象，该对象的原型是fn.prototype
-        let newObj = Object.create(fn.prototype);
-        // 调用构造函数，使用apply，将this指向新生成的对象
-        let result = fn.apply(newObj, args);
+    // function selfNew(fn, ...args) {
+    //     // 创建一个新对象，该对象的原型是fn.prototype
+    //     let newObj = Object.create(fn.prototype);
+    //     // 调用构造函数，使用apply，将this指向新生成的对象
+    //     let result = fn.apply(newObj, args);
+    //
+    //     // 如果fn函数有返回值，并且返回值是一个对象或方法，则返回该对象，否则返回新生成的instance对象
+    //     // return typeof res === "object" || typeof res === "function" ? res : instance;
+    //
+    //     return result instanceof Object ? result : newObj
+    //
+    // }
+    //
+    //
+    // function Dog(name) {
+    //     this.name = name;
+    //     return { test: 1 };
+    // }
+    // let obj1 = selfNew(Dog,"ming");
+    // console.log(obj1); // {test:1}
 
-        // 如果fn函数有返回值，并且返回值是一个对象或方法，则返回该对象，否则返回新生成的instance对象
-        // return typeof res === "object" || typeof res === "function" ? res : instance;
 
-        return result instanceof Object ? result : newObj
 
+
+    // 异步并发- js实现一个带并发限制的一部调度器，保证同时运行的任务最多有两个
+
+    class Scheduler {
+        constructor() {
+            this.queue = []
+        }
+        add(promiseCreator) {
+            this.queue.push(promiseCreator)
+        }
     }
 
+    const timeout = time => new Promise(resolve => {
+        setTimeout(resolve, time);
+    })
 
-    function Dog(name) {
-        this.name = name;
-        return { test: 1 };
+    const scheduler = new Scheduler();
+    const addTask = (time, order) => {
+        scheduler.add(() => timeout(time)).then(() => console.log(order))
     }
-    let obj1 = selfNew(Dog,"ming");
-    console.log(obj1); // {test:1}
 
-
+    // addTask(1000, '1')
+    // addTask(500, '2')
+    // addTask(300, '3')
+    // addTask(400, '4')
 
 </script>
 
