@@ -10,7 +10,7 @@ tags:
 
 # webpack
 
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 
 ## 基础
 
@@ -266,7 +266,7 @@ module.exports = {
 compiler和compilation是Webpack两个非常核心的对象，其中compiler暴露了和 Webpack整个生命周期相关的钩子（[compiler-hooks](https://webpack.js.org/api/compiler-hooks/)），而compilation则暴露了与模块和依赖有关的粒度更小的事件钩子（[Compilation Hooks](https://webpack.js.org/api/compilation-hooks/)）。
 
 Compiler类提供了很多hook函数(钩子函数)：
-![img.png](img.png)
+![img.png](assets/img.png)
 
 **核心-Tapable**
 
@@ -453,11 +453,11 @@ const config = {
 
 **一图流** ：
 
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 **校验规则 ^(inline-|hidden-|eval-)?(nosources-)?(cheap-(module-)?)?source-map$**
 
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 
 **推荐配置**
 
@@ -479,7 +479,7 @@ eval-cheap-module-source-map
 * chunkhash：文件的改动只会影响其所在 chunk 的 hash 值；
 * contenthash：每个文件都有单独的 hash 值，文件的改动只会影响自身的 hash 值；
 
-![img_4.png](img_4.png)
+![img_4.png](assets/img_4.png)
 
 ## 性能优化
 

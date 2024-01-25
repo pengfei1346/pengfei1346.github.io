@@ -35,18 +35,18 @@ less 用node写的，可在浏览器中引入less.js不需要预编译
 
 ## 区别和用法
 ### 变量、嵌套、内置函数
-![img.png](img.png)
+![img.png](assets/img.png)
 ### 命名空间
 
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 ### mixin
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 ### extend
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 
 ### 循环
-![img_4.png](img_4.png)
+![img_4.png](assets/img_4.png)
 
 
 ## 案例 0.5px边框
