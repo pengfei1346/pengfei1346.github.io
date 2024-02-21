@@ -38,8 +38,3 @@ https://juejin.cn/post/7146973901166215176#heading-1
 [参考](https://juejin.cn/post/7146973901166215176#heading-1)
 
 
-js
-
-this，闭包，继承，原型原型链
-
-

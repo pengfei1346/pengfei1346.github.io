@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>姓名：{{name}}</p>
+    <p>年龄：{{age}}</p>
+    <p>性别：{{sex}}</p>
+    <p>用户：{{id}}</p>
+</div>
+
+用户id：<input type="text" name="" id="">
+
+</body>
+
+<script>
+
+    const app = createApp({
+        el:'#app',
+        data:{
+            name:'张三',
+            age:20,
+            sex:'男',
+            id:'0001'
+        }
+    })
+    const inp = document.querySelector('input')
+    inp.oninput = function () {
+        app.id = this.value
+    }
+
+    function createApp(options) {
+        // 安全判断（传参判断）
+        // 1.1 el
+        if (options.el === undefined) {
+            throw new Error('el选项必须传递')
+        }
+        // 1.2 data
+        if (Object.prototype.toString.call(options.data) !== '[object Object]') {
+            throw new Error('data 属性必须是个对象')
+        }
+        // 1.3 el 不能为空
+        const root = document.querySelector(options.el)
+        if (root === null) throw new Error('el 必须传入，且root为有效元素')
+
+        // 2 数据劫持
+        const target = {}
+        for (let key in options.data) {
+            Object.defineProperty(target, key, {
+                get() {
+                    return options.data[key]
+                },
+                set(val) {
+                    options.data[key] = val
+                    // 每次修改数据调用渲染函数
+                    bindHtml(root, target, rootStr)
+                }
+            })
+        }
+        // 拿到根元素下面的结构（字符串形式）
+        const rootStr = root.innerHTML
+        // 首次调用
+        bindHtml(root, target, rootStr)
+
+        console.log(target);
+        return target
+
+    }
+
+    function bindHtml(root, _data, _str) {
+        // 定义一个正则拿到{{......}}
+        const reg = /{{ *(\w+) *}}/g
+        const arr = _str.match(reg)
+        arr.forEach(item => {
+            const key = /{{ *(\w+) *}}/.exec(item)[1]
+            _str = _str.replace(item, _data[key])
+        });
+        root.innerHTML = _str
+    }
+
+
+</script>
+
+</html>
