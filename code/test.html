@@ -325,28 +325,59 @@
 
     // 异步并发- js实现一个带并发限制的一部调度器，保证同时运行的任务最多有两个
 
-    class Scheduler {
-        constructor() {
-            this.queue = []
-        }
-        add(promiseCreator) {
-            this.queue.push(promiseCreator)
-        }
-    }
-
-    const timeout = time => new Promise(resolve => {
-        setTimeout(resolve, time);
-    })
-
-    const scheduler = new Scheduler();
-    const addTask = (time, order) => {
-        scheduler.add(() => timeout(time)).then(() => console.log(order))
-    }
+    // class Scheduler {
+    //     constructor() {
+    //         this.queue = []
+    //     }
+    //     add(promiseCreator) {
+    //         this.queue.push(promiseCreator)
+    //     }
+    // }
+    //
+    // const timeout = time => new Promise(resolve => {
+    //     setTimeout(resolve, time);
+    // })
+    //
+    // const scheduler = new Scheduler();
+    // const addTask = (time, order) => {
+    //     scheduler.add(() => timeout(time)).then(() => console.log(order))
+    // }
 
     // addTask(1000, '1')
     // addTask(500, '2')
     // addTask(300, '3')
     // addTask(400, '4')
+
+    // function inherit(Son, Father) {
+    //     const prototype = Object.create(Father.prototype) // 获取父类原型对象副本
+    //     prototype.constructor = Son // 将获取的副本的constructor指向子类，以此增强副本原型对象
+    //     Son.prototype = prototype // 将子类的原型对象指向副本原型对象
+    // }
+
+
+    //Person构造函数
+    function Person(){
+    }
+    //示例
+    //方式一：通过new方法来创建实例
+    //方式二：通过.creat方法来创建示例
+    var person2 = Object.create(Person)
+    var person3 = Object.create(Person.prototype)
+    console.log('person2 instanceof Person:',person2 instanceof Person);
+    console.log('person3 instanceof Person:',person3 instanceof Person);
+
+
+
+    // 寄生
+    function inherit(Son, Father) {
+        const prototype = Object.create(Father.prototype) // 获取父类原型对象副本
+        prototype.constructor = Son // 将获取的副本的constructor指向子类，以此增强副本原型对象
+        Son.prototype = prototype // 将子类的原型对象指向副本原型对象
+    }
+
+
+
+
 
 </script>
 
