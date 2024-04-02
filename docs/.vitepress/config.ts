@@ -172,6 +172,12 @@ export default defineConfig({
                 link: '/todo/'
             },
             {
+                text: '拓展学习',
+                items: [
+                    { text: '人力资源', link: '/expand/manpower/' },
+                ]
+            },
+            {
                 text: '笔记',
                 items: [
                     { text: '系统搭建', link: '/note/system/' },
