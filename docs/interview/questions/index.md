@@ -33,6 +33,14 @@ group:
 * http： 请求头 响应头有哪些
 * 组件库实现细节- [作为面试官，为什么我推荐组件库作为前端面试的亮点？](https://www.pipipi.net/28849.html)
 * 微前端 - [作为面试官，为什么我推荐微前端作为前端面试的亮点？](https://juejin.cn/post/7252342216843296828?utm_source=gold_browser_extension#heading-8)
+* [react和vue中hooks的区别](./react和vue中hooks的区别.md)
+* [深入浅出虚拟 DOM 和 Diff 算法，及 Vue2 与 Vue3 中的区别](https://juejin.cn/post/7010594233253888013)
+
+
+## 小程序相关
+
+* [uni-app开发经验总结](https://juejin.cn/post/7255855818595647546?searchId=20240325150305ECDB8F725D477B1A8DD0)
+* [小程序与H5深度对比及原理解析](https://juejin.cn/post/7239336033367277629?searchId=202403251501226392B9EF59D62C182963)
 
 
 
