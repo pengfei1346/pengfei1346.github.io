@@ -8,6 +8,27 @@ date: 2020-09-14
 ---
 # jenkins搭建
 
+## jenkins 简介
+
+### 功能特点
+
+* 开源免费
+* 多平台支持（Windows/Linux/macOS）
+* 主从分布式架构
+* 提供Web可视化配置管理页面
+* 安装配置简单
+* 插件资源丰富
+
+### 应用场景
+
+* 集成svn/git客户端，实现源代码下载检出
+* 集成maven/ant/gradle/npm等构建工具，实现源码编译打包单元测试
+* 集成sonarqube对源代码进行质量检查（坏味道、复杂度、新增bug等）
+* 集成SaltStack/Ansible实现自动化部署发布
+* 集成Jmeter/Soar/Kubernetes/...
+* 可以自定义插件或者脚本，通过Jenkins传参运行
+
+
 ## gitlab+jenkins+docker自动化部署前端项目
 
 
