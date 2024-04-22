@@ -10,6 +10,8 @@ date: 2020-09-14
 
 ## jenkins 简介
 
+文档--https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/
+
 ### 功能特点
 
 * 开源免费
