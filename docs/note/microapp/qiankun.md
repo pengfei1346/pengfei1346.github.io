@@ -50,7 +50,7 @@ QianKun对single-spa方案进行完善，主要的完善点：
 ### 使用
 
 
-```js
+```text
 import importHTML from 'import-html-entry';
 
 importHTML('//localhost:7104').then(res => {
@@ -101,9 +101,6 @@ function fn(window, self, globalThis) {
 const bindedFn = fn.bind(window.proxy);
 
 bindedFn(window.proxy, window.proxy, window.proxy);
-
-
-
 ```
 
 ## 3 种沙箱：
@@ -111,12 +108,9 @@ bindedFn(window.proxy, window.proxy, window.proxy);
 沙箱原理实现参考--
 https://juejin.cn/post/7308583491934994470?searchId=202312051138171E5BF3CDF6DD10C77C67#heading-2
 
-SnapshotSandbox：记录 window 对象，每次 unmount 都要和微应用的环境进行 Diff
-LegacySandbox：在微应用修改 window.xxx 时直接记录 Diff，将其用于环境恢复
-ProxySandbox：为每个微应用分配一个 fakeWindow，当微应用操作 window 时，其实是在 fakeWindow 上操作
-
-
-
+* SnapshotSandbox：记录 window 对象，每次 unmount 都要和微应用的环境进行 Diff
+* LegacySandbox：在微应用修改 window.xxx 时直接记录 Diff，将其用于环境恢复
+* ProxySandbox：为每个微应用分配一个 fakeWindow，当微应用操作 window 时，其实是在 fakeWindow 上操作
 
 https://juejin.cn/post/7148075486403362846?searchId=20231117113416A643EB13D82F74CBD53C
 
@@ -125,7 +119,7 @@ https://juejin.cn/post/7148075486403362846?searchId=20231117113416A643EB13D82F74
 - scoped css  
 如果开启了 experimentalStyleIsolation 选项，qiankun 会使用 scoped css 的方式来进行样式隔离。
 
-```css
+```text
 // 默认样式
 .react15-icon { 
   height: 400px; 
@@ -137,7 +131,6 @@ div[data-qiankun="react15"] .react15-icon {
 }
 
 ```
-
 
 - shadow dom    
 
@@ -164,7 +157,7 @@ qiankun提供了initGlobalState(state)定义全局状态，返回通信方法:
 
 主应用
 
-```js
+```text
 import { initGlobalState, MicroAppStateActions } from 'qiankun';
 
 
@@ -182,7 +175,7 @@ actions.offGlobalStateChange();
 
 微应用
 
-```js
+```text
 // 从生命周期 mount 中获取通信方法，使用方式和 master 一致
 export function mount(props) {
   props.onGlobalStateChange((state, prev) => {
@@ -212,7 +205,7 @@ https://juejin.cn/post/7308583491934994470?searchId=202312051138171E5BF3CDF6DD10
 2.2. emit 方法用于派发事件，接收事件名称和可选的事件数据作为参数。
 2.3. on 方法用于监听事件，接收事件名称和回调函数作为参数。当相应的事件被派发时，回调函数将被执行。
 
-```js
+```text
 window.globalEvent = {
   events: {},
   emit(event, data) {
@@ -238,7 +231,7 @@ window.globalEvent = {
 **2. 如果主项目和所有子项目都采用 hash 模式，可以有两种做法：**
 
 * 使用 path 来区分子项目：这种方式不需要对子项目进行修改，但所有项目之间的跳转需要借助原生的 history 对象。
-* 使用 hash 来区分子项目：这种方式可以通过自定义 activeRule 来实现，但需要对子项目进行一定的修改，将子项目的路由加上前缀。这样的话，项目之间的跳转可以直接使用各自的 router 对象或 <router-link>。
+* 使用 hash 来区分子项目：这种方式可以通过自定义 activeRule 来实现，但需要对子项目进行一定的修改，将子项目的路由加上前缀。这样的话，项目之间的跳转可以直接使用各自的 router 对象或 router-link。
 
 **3. 如果主项目采用 hash 模式，而子项目中有些采用 history 模式
 
@@ -259,14 +252,9 @@ window.globalEvent = {
 主版本。次版本。补丁版本，什么时候需要发布补丁版本，什么时候需要发布主版本
 webpack和vite区别
 
-
-
-
-
-
 todo
 
-* mini版qiankun手撸代码  -> 
+* mini版qiankun手撸代码
 
 https://juejin.cn/post/7294474535021510683?searchId=20231117113416A643EB13D82F74CBD53C
 
@@ -276,18 +264,3 @@ https://juejin.cn/post/7114589692560932878?searchId=20231117113416A643EB13D82F74
 
 
 * [微前端qiankun从搭建到部署的实践](https://juejin.cn/post/6875462470593904653#heading-9)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
