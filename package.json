@@ -29,6 +29,7 @@
   "devDependencies": {
     "minimist": "^1.2.8",
     "sass": "^1.64.1",
-    "vite": "^4.4.6"
+    "vite": "^4.4.6",
+    "webpack-sentry-plugin": "^2.0.3"
   }
 }
