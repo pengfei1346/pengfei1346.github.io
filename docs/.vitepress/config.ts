@@ -187,7 +187,7 @@ export default defineConfig({
                     { text: '微前端', link: '/note/microapp/' },
                     { text: '概念性知识', link: '/note/concept/' },
                     { text: '实现方案', link: '/note/case/' },
-                    { text: 'CI/CD', link: '/note/CICD/' },
+                    { text: 'docker', link: '/note/docker/' },
                     { text: '其他', link: '/note/other/' },
                 ]
             },
