@@ -18,16 +18,29 @@ sticky: 1
 
 我的电脑配置：
 
-win：1060显卡，6G显存，16G内存，一块521G的固态硬盘。
-mac：
-![img.png](img.png)
+* win：1060显卡，6G显存，16G内存，一块521G的固态硬盘。
+* mac：
+  ![img.png](img.png)
 
-安装教程：
 
-[Stable Diffusion 安装教程（附安装包）](https://blog.csdn.net/A2421417624/article/details/137766693)
-[一学就会，Macpro本地部署 Stable Diffusion](https://zhuanlan.zhihu.com/p/652700145)
-[Mac一键本地部署sd](http://www.hnbyed.com/news/4875.html)
+### 安装教程：
+话不多说上链接，也可以根据我的笔记来。
 
+**windows：**
+
+* [Stable Diffusion 安装教程（附安装包）](https://blog.csdn.net/A2421417624/article/details/137766693)
+
+**mac：** - 坑比较多，多参考了一些网上教程
+
+* [一学就会，Macpro本地部署 Stable Diffusion](https://zhuanlan.zhihu.com/p/652700145)
+* [Mac一键本地部署sd](http://www.hnbyed.com/news/4875.html)
+* [SD教程- ! 清晰易懂 !](https://blog.csdn.net/weixin_49720173/article/details/137225953)
+
+### windows部署
+
+没有按照官网部署的教程，用了网上找的一个整合包（秋叶整合包），用整合包的原因还是觉得配置环境和模型太麻烦，比较喜欢傻瓜式安装，但是使用整合包后续升级可能不方便，可以自行取舍。
+
+windows安装起来还是很顺利的，安装完成跑的速度也能接受（gtx1060显卡）。
 
 
 ### mac部署
@@ -197,22 +210,6 @@ vi webui-user.sh
 5. 点击界面顶部的黄色按钮”Apply settings”，然后再点击右侧的”Reload UI”即可完成中文汉化。
 
 ### 更新 ----- 装到最后能跑，但是极其慢，也许是我电脑intel iris plus graphics 650显卡太垃圾了，mac还是不折腾了，我老老实实windows或者云部署吧，也许mac显卡性能好的可以装一下玩玩
-
-### windows部署
-
-没有按照官网部署的教程，用了网上找的一个整合包（秋叶整合包），用整合包的原因还是觉得配置环境和模型太麻烦，比较喜欢傻瓜式安装，但是使用整合包后续升级可能不方便，可以自行取舍。
-
-windows安装起来还是很顺利的，安装完成跑的速度也能接受（gtx1060显卡）。
-
-**安装教程**
-
-https://blog.csdn.net/weixin_49720173/article/details/137225953
-
-
-
-
-
-
 
 
 
