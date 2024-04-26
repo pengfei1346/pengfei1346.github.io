@@ -168,10 +168,6 @@ export default defineConfig({
                 link: '/mapping/'
             },
             {
-                text: '待办',
-                link: '/todo/'
-            },
-            {
                 text: '拓展学习',
                 items: [
                     { text: '人力资源', link: '/expand/manpower/' },
