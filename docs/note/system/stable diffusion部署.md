@@ -176,9 +176,8 @@ vi webui-user.sh
 
 请注意，在使用过程中，不要关闭终端窗口，因为终端会输出相关信息。
 
-### 更新 ----- 装到最后能跑，但是极其慢，也许是我电脑intel iris plus graphics 650显卡太垃圾了，mac还是不折腾了，我老老实实windows或者云部署吧，也许mac显卡性能好的可以装一下玩玩
+**安装中文语言包**
 
-### 安装中文语言包
 要安装中文语言包，你可以选择以下两种方式：
 
 方式一：通过WebUI拓展进行安装
@@ -197,6 +196,7 @@ vi webui-user.sh
 4. 再次打开Stable Diffusion WebUI，点击”Settings”，在左侧选择”User interface”界面，在最下方的”Localization (requires restart)”中，选择”Chinese-All”或”Chinese-English”。
 5. 点击界面顶部的黄色按钮”Apply settings”，然后再点击右侧的”Reload UI”即可完成中文汉化。
 
+### 更新 ----- 装到最后能跑，但是极其慢，也许是我电脑intel iris plus graphics 650显卡太垃圾了，mac还是不折腾了，我老老实实windows或者云部署吧，也许mac显卡性能好的可以装一下玩玩
 
 ### windows部署
 
