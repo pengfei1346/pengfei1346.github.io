@@ -1,3 +1,9 @@
+---
+sidebar:
+title: vue2.x -> vue2.7升级记录
+tags:
+- vue
+---
 # vue2.x -> vue2.7记录
 
 ## 1、 vue upgrade
