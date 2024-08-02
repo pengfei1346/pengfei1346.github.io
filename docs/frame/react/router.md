@@ -196,7 +196,6 @@ function DEMO() {
 }
 
 export default DEMO;
-
 ```
 
 ### 3.获取路由的参数
