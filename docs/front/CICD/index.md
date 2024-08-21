@@ -17,8 +17,8 @@ https://juejin.cn/post/7155151377013047304
 * [发布流程](./发布流程.md)
 * [错误上报](./错误上报.md)
 * [webpack详解](./webpack.md)
-
-
+* [vite.config.js注释](./vite.config.js注释.md)
+  
 https://juejin.cn/post/7311596602249134106?utm_source=gold_browser_extension
 
 ![img_4.png](img_4.png)
