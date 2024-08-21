@@ -24,9 +24,7 @@ cat 你的公钥 >> authorized_keys
 * [URLScheme](./URLScheme.md)
 * [公众号H5调试](./公众号H5调试.md)
 * [linux添加用户配置免登](./添加用户配置免登.md)
-
-
-
+* [前沿技术盘点](./前沿技术盘点.md)
 
 
 
