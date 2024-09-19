@@ -26,7 +26,9 @@ group:
 * [less和sass区别](./less&sass.md)
 * [面经收集](./面经收集.md)
 
+## js
 
+* [字节js面试题](./字节js面试题.md)
 
 ## 高频面试题
 
@@ -35,7 +37,6 @@ group:
 * 微前端 - [作为面试官，为什么我推荐微前端作为前端面试的亮点？](https://juejin.cn/post/7252342216843296828?utm_source=gold_browser_extension#heading-8)
 * [react和vue中hooks的区别](./react和vue中hooks的区别.md)
 * [深入浅出虚拟 DOM 和 Diff 算法，及 Vue2 与 Vue3 中的区别](https://juejin.cn/post/7010594233253888013)
-
 
 ## 小程序相关
 
