@@ -5,12 +5,19 @@ hidden: true
 
 ## Web Worker
 
+Web Worker 有三种类型：
+
+* Dedicated Worker（专用 Worker）：由主线程实例化且只能与它通信，不能访问别的环境。
+* Shared Worker（共享 Worker）：所有 Shared Worker 实例共享一个全局环境，多个页面可以用 Shared Worker 互相通信，可以处理多个连接。
+* Service worker（服务 Worker）：具有 Shared Worker 的特点、通过事件驱动，可以随时关闭再重启、不需要任何页面也能工作，只支持 https 和 localhost。多用于离线场景
+
+平常使用最多，最常见的就是 Dedicated Worker，并且 Dedicated Worker 兼容性较好
+
 ### 让前端拥有后端的计算能力
 
 在HTML5的新规范中，实现了 Web Worker 来引入 js 的 多线程 技术, 可以让我们在页面主运行的js线程中，加载运行另外单独的一个或者多个 js线程
 
 Web Worker专门处理复杂计算的，从此让前端拥有后端的计算能力
-
 
 ### 页面大量计算，造成假死
 
