@@ -26,5 +26,5 @@ cat 你的公钥 >> authorized_keys
 * [linux添加用户配置免登](./添加用户配置免登.md)
 * [前沿技术盘点](./前沿技术盘点.md)
 * [H5踩坑记录](./H5踩坑记录.md)
-
+* [Shadcn UI](./Shadcn UI.md)
 
