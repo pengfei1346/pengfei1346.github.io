@@ -354,26 +354,85 @@
     //     Son.prototype = prototype // 将子类的原型对象指向副本原型对象
     // }
 
+    //
+    // //Person构造函数
+    // function Person(){
+    // }
+    // //示例
+    // //方式一：通过new方法来创建实例
+    // //方式二：通过.creat方法来创建示例
+    // var person2 = Object.create(Person)
+    // var person3 = Object.create(Person.prototype)
+    // console.log('person2 instanceof Person:',person2 instanceof Person);
+    // console.log('person3 instanceof Person:',person3 instanceof Person);
+    //
+    //
+    //
+    // // 寄生
+    // function inherit(Son, Father) {
+    //     const prototype = Object.create(Father.prototype) // 获取父类原型对象副本
+    //     prototype.constructor = Son // 将获取的副本的constructor指向子类，以此增强副本原型对象
+    //     Son.prototype = prototype // 将子类的原型对象指向副本原型对象
+    // }
 
-    //Person构造函数
-    function Person(){
-    }
-    //示例
-    //方式一：通过new方法来创建实例
-    //方式二：通过.creat方法来创建示例
-    var person2 = Object.create(Person)
-    var person3 = Object.create(Person.prototype)
-    console.log('person2 instanceof Person:',person2 instanceof Person);
-    console.log('person3 instanceof Person:',person3 instanceof Person);
+
+
+    // a == 1 && a == 2 && a == 3
+    //
+
+    Promise.resolve()
+        .then(function() {
+            console.log("promise0");
+        })
+        .then(function() {
+            console.log("promise5");
+        });
+    setTimeout(() => {
+        console.log("timer1");
+        Promise.resolve().then(function() {
+            console.log("promise2");
+        });
+        Promise.resolve().then(function() {
+            console.log("promise4");
+        });
+    }, 0);
+    setTimeout(() => {
+        console.log("timer2");
+        Promise.resolve().then(function() {
+            console.log("promise3");
+        });
+    }, 0);
+    Promise.resolve().then(function() {
+        console.log("promise1");
+    });
+    console.log("start");
+
+    // 打印结果： start promise0 promise1 promise5 timer1 promise2 promise4 timer2 promise3
 
 
 
-    // 寄生
-    function inherit(Son, Father) {
-        const prototype = Object.create(Father.prototype) // 获取父类原型对象副本
-        prototype.constructor = Son // 将获取的副本的constructor指向子类，以此增强副本原型对象
-        Son.prototype = prototype // 将子类的原型对象指向副本原型对象
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
