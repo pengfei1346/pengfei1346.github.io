@@ -6,7 +6,7 @@ date: 2024-03-14
 tags:
 - 工程化
 - CI/CD
-  categories:
+categories:
 - 工程化
 ---
 # vite.config.js注释
