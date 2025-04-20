@@ -229,6 +229,7 @@ export default defineConfig({
                 items: [
                     { text: '算法与数据结构', link: '/interview/algorithm/' },
                     { text: '常见面试题', link: '/interview/questions/' },
+                    { text: '场景面试题', link: '/interview/scene/' },
                     { text: '综合问题', link: '/interview/other/' },
                     { text: '突击课程', link: '/interview/quick/' },
                 ]
