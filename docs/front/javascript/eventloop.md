@@ -74,8 +74,8 @@ JS 语言的一大特点就是单线程，因此需要这种机制来处理各�
 
 * 2）微任务（Microtasks）  
   * promise
-  * MutationObserver
-    用于监听DOM树变化的接口
+  * MutationObserver 
+    用于监听DOM树变化的接口 [详解](https://cloud.tencent.com/developer/article/2490663)
   * process.nextTick（Node.js 环境）
    （属于当前事件循环的末尾，但在微任务之前执行）
   * queueMicrotask（浏览器独有）
