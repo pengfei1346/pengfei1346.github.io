@@ -187,6 +187,7 @@ export default defineConfig({
                     { text: '实现方案', link: '/note/case/' },
                     { text: 'docker', link: '/note/docker/' },
                     { text: '其他', link: '/note/other/' },
+                    { text: '坑点记录', link: '/note/bugs' },
                     { text: 'ps', link: '/note/ps/' },
                 ]
             },
