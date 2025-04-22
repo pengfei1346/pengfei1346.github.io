@@ -84,12 +84,9 @@ mongod --dbpath /usr/local/db --logpath /usr/local/var/log/mongodb/mongo.log --f
 
 ## 4、nginx配置
 
+### 本地反向代理配置
+
 ```text
-#### conf
-
-##### 本地反向代理配置
-
-```text 
 server {
         listen       8080;
         server_name  192.168.2.1;
@@ -246,12 +243,10 @@ location /test/ {
 
 #### npm 方式启动 node
 
-语法：pm2 start npm --watch --name <taskname> -- run <scriptname>;
-
-其中 -- watch监听代码变化，-- name重命名任务名称，-- run后面跟脚本名字
-
-```text
- pm2 start npm -- run dev
+```shell
+# 语法：pm2 start npm --watch --name <taskname> -- run <scriptname>;
+# 其中 -- watch监听代码变化，-- name重命名任务名称，-- run后面跟脚本名字
+# pm2 start npm -- run dev
 ```
 
 
