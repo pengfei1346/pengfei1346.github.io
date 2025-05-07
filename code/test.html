@@ -380,62 +380,101 @@
     // a == 1 && a == 2 && a == 3
     //
 
-    Promise.resolve()
-        .then(function() {
-            console.log("promise0");
-        })
-        .then(function() {
-            console.log("promise5");
-        });
-    setTimeout(() => {
-        console.log("timer1");
-        Promise.resolve().then(function() {
-            console.log("promise2");
-        });
-        Promise.resolve().then(function() {
-            console.log("promise4");
-        });
-    }, 0);
-    setTimeout(() => {
-        console.log("timer2");
-        Promise.resolve().then(function() {
-            console.log("promise3");
-        });
-    }, 0);
-    Promise.resolve().then(function() {
-        console.log("promise1");
-    });
-    console.log("start");
+    // Promise.resolve()
+    //     .then(function() {
+    //         console.log("promise0");
+    //     })
+    //     .then(function() {
+    //         console.log("promise5");
+    //     });
+    // setTimeout(() => {
+    //     console.log("timer1");
+    //     Promise.resolve().then(function() {
+    //         console.log("promise2");
+    //     });
+    //     Promise.resolve().then(function() {
+    //         console.log("promise4");
+    //     });
+    // }, 0);
+    // setTimeout(() => {
+    //     console.log("timer2");
+    //     Promise.resolve().then(function() {
+    //         console.log("promise3");
+    //     });
+    // }, 0);
+    // Promise.resolve().then(function() {
+    //     console.log("promise1");
+    // });
+    // console.log("start");
 
     // 打印结果： start promise0 promise1 promise5 timer1 promise2 promise4 timer2 promise3
 
+    // let list = [
+    //     {
+    //         id: '1',
+    //         title: '节点1',
+    //         parentId: '',
+    //     },
+    //     {
+    //         id: '1-1',
+    //         title: '节点1-1',
+    //         parentId: '1'
+    //     },
+    //     {
+    //         id: '1-2',
+    //         title: '节点1-2',
+    //         parentId: '1'
+    //     },
+    //     {
+    //         id: '2',
+    //         title: '节点2',
+    //         parentId: ''
+    //     },
+    //     {
+    //         id: '2-1',
+    //         title: '节点2-1',
+    //         parentId: '2'
+    //     }
+    // ]
 
+    // function listToTree(data) {
+    //     let map = {};
+    //     let treeData = [];
+    //     for (let i = 0; i < data.length; i++) {
+    //         map[data[i].id] = {
+    //             ...data[i],
+    //             children: [],
+    //         };
+    //     }
 
+    //     // 遍历列表，将每个节点添加到其父节点的 children 数组中
+    //     data.forEach(item => {
+    //         if (item.parentId) {
+    //             // 如果节点有父节点，则将其添加到父节点的 children 数组中
+    //             if (map[item.parentId]) {
+    //                 map[item.parentId].children.push(map[item.id]);
+    //             }
+    //         } else {
+    //             // 如果节点没有父节点，则将其作为根节点
+    //             treeData.push(map[item.id]);
+    //         }
+    //     });
 
+    //     //
+    //     // for (let i in temp) {
+    //     //     if (+temp[i].parentId != 0) {
+    //     //         if (!temp[temp[i].parentId].children) {
+    //     //             temp[temp[i].parentId].children = [];
+    //     //         }
+    //     //         temp[temp[i].parentId].children.push(temp[i]);
+    //     //     } else {
+    //     //         treeData.push(temp[i]);
+    //     //     }
+    //     // }
+    //     return treeData;
+    // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // console.log(listToTree(list));
 
 
 </script>

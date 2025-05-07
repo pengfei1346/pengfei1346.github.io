@@ -167,12 +167,12 @@ export default defineConfig({
                 text: '思维导图',
                 link: '/mapping/'
             },
-            {
-                text: '拓展学习',
-                items: [
-                    { text: '人力资源', link: '/expand/manpower/' },
-                ]
-            },
+            // {
+            //     text: '拓展学习',
+            //     items: [
+            //         { text: '人力资源', link: '/expand/manpower/' },
+            //     ]
+            // },
             {
                 text: '笔记',
                 items: [
@@ -188,6 +188,7 @@ export default defineConfig({
                     { text: 'docker', link: '/note/docker/' },
                     { text: '其他', link: '/note/other/' },
                     { text: '坑点记录', link: '/note/bugs' },
+                    { text: 'git', link: '/note/git' },
                     { text: 'ps', link: '/note/ps/' },
                 ]
             },
@@ -203,14 +204,20 @@ export default defineConfig({
                     { text: '工程化', link: '/front/CICD/' },
                     { text: '混合开发', link: '/front/混合开发/' },
                     { text: 'Web Worker', link: '/front/Web-Worker/' },
+                    {
+                        text: '框架',
+                        items: [
+                            { text: 'vue2', link: '/frame/vue2/' },
+                            { text: 'vue3', link: '/frame/vue3/' },
+                            { text: 'react', link: '/frame/react/' },
+                        ]
+                    },
                 ]
             },
             {
-                text: '框架',
+                text: '后端',
                 items: [
-                    { text: 'vue2', link: '/frame/vue2/' },
-                    { text: 'vue3', link: '/frame/vue3/' },
-                    { text: 'react', link: '/frame/react/' },
+                    { text: 'nodejs', link: '/backend/nodejs/' },
                 ]
             },
             {

@@ -5,5 +5,6 @@ hidden: true
 
 ## 目录
 
-* [思维导图](./all.md)
+* [BFF](./BFF.md)
+
 
