@@ -27,4 +27,5 @@ cat 你的公钥 >> authorized_keys
 * [前沿技术盘点](./前沿技术盘点.md)
 * [H5踩坑记录](./H5踩坑记录.md)
 * [Shadcn UI](./Shadcn UI.md)
+* [文件上传下载进度监听](./文件上传下载进度监听.md)
 
