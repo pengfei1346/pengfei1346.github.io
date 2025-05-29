@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.cc2b3d55.js";
+const __pageData = JSON.parse('{"title":"简介","description":"","frontmatter":{"hidden":true},"headers":[],"relativePath":"interview/quick/index.md","filePath":"interview/quick/index.md","lastUpdated":1701327138000}');
+const _sfc_main = { name: "interview/quick/index.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="简介" tabindex="-1">简介 <a class="header-anchor" href="#简介" aria-label="Permalink to &quot;简介&quot;">​</a></h1><h2 id="目录" tabindex="-1">目录 <a class="header-anchor" href="#目录" aria-label="Permalink to &quot;目录&quot;">​</a></h2><h2 id="闲聊" tabindex="-1">闲聊 <a class="header-anchor" href="#闲聊" aria-label="Permalink to &quot;闲聊&quot;">​</a></h2><p>角色的转变 = 架构、流程把控等 -》 更偏向团队</p><h3 id="面试流程" tabindex="-1">面试流程 <a class="header-anchor" href="#面试流程" aria-label="Permalink to &quot;面试流程&quot;">​</a></h3><p><strong>hr介入时机</strong></p><p>技术面之前 = hr地位没有那么高，一般技术面过了面试官拍板 技术面之后 = hr 地位比较高，即使技术面过了，hr也拥有一票否决权</p><p>1、 hr/leader</p><blockquote><p>他们不是做基础业务的，对技术的敏感程度不是那么高，只在意你是否匹配我的岗位，能否胜任这份工作。</p></blockquote><p>自我介绍 - 简要概括</p><ul><li>日常工作内容</li></ul><p><strong>技术栈</strong>：提取关键词。。 正在使用比较熟悉的要讲出来、不是那么熟悉或者了解的也要说出来，增加一个面试分。例如：vue我很熟悉，应用在日常工作中，但是，react我也有了解。echats我很熟悉，应用在日常工作中，antv也有过了解。</p><p><strong>项目</strong>： 精简，听得懂。</p><p>系统是干什么的，有什么模块，在这个过程中过了哪些工作？取得了什么成就？</p><p>后台管理系统 、 人事系统 爱才小程序 web-h5- 签署合同 钉钉通知、审批 入离职 工资条 用户信息收集 钉钉微应用 千城招聘公众号 爱才数字大屏 electron弹幕工具 - 年会使用 爱才官网/金谷官网/千斗官网</p><p>组件库</p><p>千斗企业端 千斗后台 千斗税务端 千斗小程序 签署合同h5</p><p>猎头Chrome插件</p><p><strong>预先调研</strong>：</p><p>看看公司是干嘛的，想办法提高和公司岗位的匹配度，面试的时候也知道面试的侧重点、预先也有个准备。</p><h3 id="一面" tabindex="-1">一面 <a class="header-anchor" href="#一面" aria-label="Permalink to &quot;一面&quot;">​</a></h3><p>面试管角色： 组内的骨干 -</p><p>1、确认你和简历信息是否基本吻合，并且进一步定位掌握程度的深浅。每个技能点会标记你的掌握程度。 2、确认是否具备快速学习上手干活的能力。 -- 你又遇见什么难点，如何解决的 -》 解决问题的过程 中间的思考 最后解决方案 3、基础知识能够满足岗位的最低需求 4、能否适应团队的工作，并且有一定的提升空间。 -- 面试难度是否达到了你的预期，或者有信息暗示你让你自己介绍一下自己的闪光点。</p><p>面试人的准备工作：</p><p>1、简历上的技术一定要熟悉，并且按照级别深度准备。 2、以往的业务经历，挖掘一下自己的工作能力和学习能力。总结一下做过的知识点。 3、基础知识扫盲及提高。 4、找机会展示自己的学习思考能力。</p><p>面试过程：</p><p>技术考察 -</p><p>html、计算机网络、浏览器、性能 css =》 bfc、权重、布局、css框架</p><p>js基础 =》 类型 =》 继承 =》 原型、原型链 = 类 =》 oop =》 es6 手写- mvvm 算法 call apply 技巧 函数提升、闭包、防抖、节流</p><p>代理、垃圾回收、event loop、设计模式、AST</p><p>框架 mvvm 工具类 - network 、 axios如何实现的、 router 、 babel 打包- webpack input、output、loader、plugin 如何配置，mockserver 、 热更新如何做</p><p>实操和算法 字符串内容替换、 数组去重、对象全等 排序、场景类算法</p><h3 id="二面" tabindex="-1">二面 <a class="header-anchor" href="#二面" aria-label="Permalink to &quot;二面&quot;">​</a></h3><p>面试官 - leader</p><p>1、除了基础实践层面，知识体系的完成度 2、除了业务开发之外，实际解决问题的能力 3、领域场景以及架构设计能力。</p><p>面试人</p><p>1、知识体系图谱 2、解决问题的能力 - 回顾项目、沟通、业务设想 3、框架设计、架构能力《web站点搭建》《前端架构》《大话设计模式》</p><p>网络类 tcp/udp ajax/websocket http 1.0 2.0 跨域</p><p>框架类 mvc/mvvm diff算法 vnode ref</p><p>web架构类 安全性 xss crx dns 优化方面... ci cd 持续迭代/持续部署 devOps - 开发自运维</p><p>新技术的敏感度 低代码、跨平台、微前端、web3</p><h2 id="三面" tabindex="-1">三面 <a class="header-anchor" href="#三面" aria-label="Permalink to &quot;三面&quot;">​</a></h2><p>最高级别 - 广度和个人思考</p><p>技术历史 抽象处理类 个人思考</p><h2 id="" tabindex="-1"><a class="header-anchor" href="#" aria-label="Permalink to &quot;&quot;">​</a></h2><p>1、技术掌握程度 - 提问的顺序以及深度 2、技术栈、端、长期涉足的领域 - 提问方式，感兴趣的程度</p><p>=》</p><p>1、从深度到了解，并按照顺序来书写和准备 2、明确罗列技术栈、端、业务领域 3、尽量不要写自己未知的领域，主动暴露自己擅长的领域。</p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("interview/quick/index.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  index as default
+};

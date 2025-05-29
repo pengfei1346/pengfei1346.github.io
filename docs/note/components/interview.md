@@ -142,6 +142,22 @@ module.exports = {
 };
 
 ```
+## Q: 开发时如何调试你的组件？
+
+```text
+// 1、通过script标签引入
+<script src="../dist/bs-display-umd.js"></script>
+
+// 2、import引入
+1、在组件库根目录执行 npm link
+2、搭建一个用于测试的vue项目LibTest，在测试项目根目录下执行
+npm link bs-display 
+3、可以像普通npm安装的组件库一样使用
+import { Frame } from 'bs-display'  //按需引入
+Vue.use(Frame)
+
+
+```
 
 ## Q: Element-UI 的多语言方案是怎么设计的?
 
@@ -341,6 +357,8 @@ interface ButtonProps {
 
 - 1、版本控制策略
   组件库通常遵循语义化版本 (SemVer) 规范进行版本控制。在语义化版本中，每个版本号都由三部分组成：主版本号、次版本号和补丁版本号。
+
+- 主版本.次版本.补丁版本     major.minor.patch
 
 例如，版本号为 1.2.3 表示主版本号为 1，次版本号为 2，补丁版本号为 3。
 

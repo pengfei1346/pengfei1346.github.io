@@ -1,0 +1,52 @@
+import { ssrRenderAttrs, ssrRenderStyle, ssrRenderAttr } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.cc2b3d55.js";
+const _imports_0 = "/assets/img.8dc83476.png";
+const __pageData = JSON.parse('{"title":"restful规范","description":"","frontmatter":{"sidebar":null,"title":"restful规范","date":"2024-05-14T00:00:00.000Z","tags":["前端规范","restful"],"categories":["规范"]},"headers":[],"relativePath":"note/standard/restful.md","filePath":"note/standard/restful.md","lastUpdated":1722234997000}');
+const _sfc_main = { name: "note/standard/restful.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="restful规范" tabindex="-1">restful规范 <a class="header-anchor" href="#restful规范" aria-label="Permalink to &quot;restful规范&quot;">​</a></h1><h1 id="什么是restful" tabindex="-1">什么是RESTful？ <a class="header-anchor" href="#什么是restful" aria-label="Permalink to &quot;什么是RESTful？&quot;">​</a></h1><p>RESTful,简称REST。</p><ol><li>英文：Representational State Transfer。</li><li>直译：表现层状态转化。</li><li>本质：用URL定位资源，用HTTP动词（GET,POST,DELETE,DETC）描述操作。</li><li>特点：RESTful是一种软件架构风格、设计风格，而不是标准，只是提供了一组设计原则和约束条件。它主要用于客户端和服务器交互类的软件。 基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。</li></ol><h1 id="restful-api接口设计规范" tabindex="-1">Restful API接口设计规范 <a class="header-anchor" href="#restful-api接口设计规范" aria-label="Permalink to &quot;Restful API接口设计规范&quot;">​</a></h1><h2 id="协议" tabindex="-1">协议 <a class="header-anchor" href="#协议" aria-label="Permalink to &quot;协议&quot;">​</a></h2><p>包含 http 和 https，使用 https 可以确保交互数据的传输安全。</p><h2 id="路径规则-域名" tabindex="-1">路径规则|域名 <a class="header-anchor" href="#路径规则-域名" aria-label="Permalink to &quot;路径规则|域名&quot;">​</a></h2><p>路径又称 “终点”（endpoint），表示 API 的具体网址。 在 RESTful 架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的 “集合”（collection），所以 API 中的名词也应该使用复数。 包含两种形式： a、主域名：<a href="https://api.example.com" target="_blank" rel="noreferrer">https://api.example.com</a> b、子目录：<a href="https://example.org/api/" target="_blank" rel="noreferrer">https://example.org/api/</a></p><h2 id="版本控制" tabindex="-1">版本控制 <a class="header-anchor" href="#版本控制" aria-label="Permalink to &quot;版本控制&quot;">​</a></h2><p>版本号：v {n} n 代表版本号，分为整形和浮点型 整型：大功能版本发布形式；具有当前版本状态下的所有 API 接口，例如：v1,v2。 浮点型：为小版本号，只具备补充 api 的功能，其他 api 都默认调用对应大版本号的 api 例如：v1.1 v2.2。 放入位置： 1、将版本号放入URL中（方便直观）。 2、将版本号放在请求头。</p><h2 id="请求类型" tabindex="-1">请求类型 <a class="header-anchor" href="#请求类型" aria-label="Permalink to &quot;请求类型&quot;">​</a></h2><p>GET（SELECT）：从服务器取出资源（一项或多项）。 POST（CREATE）：在服务器新建一个资源。 PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。 PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。 DELETE（DELETE）：从服务器删除资源。</p><h2 id="参数" tabindex="-1">参数 <a class="header-anchor" href="#参数" aria-label="Permalink to &quot;参数&quot;">​</a></h2><h3 id="地址栏参数" tabindex="-1">地址栏参数 <a class="header-anchor" href="#地址栏参数" aria-label="Permalink to &quot;地址栏参数&quot;">​</a></h3><p>主要用于过滤查询 a、restful 地址栏参数 /api/v1/product/122 122 为产品编号，获取产品为 122 的信息 b、get 方式的查询字串，此种方式主要用于过滤查询，如下：</p><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">?limit=10：指定返回记录的数量</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">?offset=10：指定返回记录的开始位置。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序（sequence、order）。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">?producy_type=1：指定筛选条件</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">?limit=10：指定返回记录的数量</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">?offset=10：指定返回记录的开始位置。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">?page=2&amp;per_page=100：指定第几页，以及每页的记录数。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序（sequence、order）。</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">?producy_type=1：指定筛选条件</span></span></code></pre></div><h3 id="请求body数据" tabindex="-1">请求body数据 <a class="header-anchor" href="#请求body数据" aria-label="Permalink to &quot;请求body数据&quot;">​</a></h3><p>主要用于提交新建数据</p><h3 id="请求头" tabindex="-1">请求头 <a class="header-anchor" href="#请求头" aria-label="Permalink to &quot;请求头&quot;">​</a></h3><p>用于存放请求格式信息、版本号、token 密钥、语言等信息</p><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">{</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    Accept: &#39;application/json&#39;,     //json格式</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    version: &#39;v1.0&#39;                       //版本号</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    Authorization: &#39;Bearer {access_token}&#39;,   //认证token</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    language: &#39;zh&#39;                      //语言</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">}</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">{</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    Accept: &#39;application/json&#39;,     //json格式</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    version: &#39;v1.0&#39;                       //版本号</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    Authorization: &#39;Bearer {access_token}&#39;,   //认证token</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    language: &#39;zh&#39;                      //语言</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">}</span></span></code></pre></div><h3 id="返回格式" tabindex="-1">返回格式 <a class="header-anchor" href="#返回格式" aria-label="Permalink to &quot;返回格式&quot;">​</a></h3><p>默认返回格式：</p><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">{</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    code: 0,                         //状态码</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    msg: &#39;ok&#39;,                       //提示信息</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">    data: {}                          //主体数据</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">}</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">{</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    code: 0,                         //状态码</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    msg: &#39;ok&#39;,                       //提示信息</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">    data: {}                          //主体数据</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">}</span></span></code></pre></div><p>使用 json 格式作为响应格式，状态码分为两种：</p><ul><li>a、statusCode: 系统状态码，用于处理响应状态，与 http 状态码保持一致，如：200 表示请求成功，500 表示服务器错误。</li><li>b、code：业务状态码，用于处理业务状态，一般 0 标识正常，可根据需求自行设计错误码对照表</li></ul><p><img${ssrRenderAttr("src", _imports_0)} alt="img.png"></p><h1 id="总结" tabindex="-1">总结 <a class="header-anchor" href="#总结" aria-label="Permalink to &quot;总结&quot;">​</a></h1><p>url地址中只包含名词表示资源，使用http动词表示动作进行操作资源.</p><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">GET /blog/getArticles --&gt; GET /blog/Articles  获取所有文章</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">GET /blog/addArticles --&gt; POST /blog/Articles  添加一篇文章</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">GET /blog/editArticles --&gt; PUT /blog/Articles  修改一篇文章 </span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#e1e4e8" })}">GET /rest/api/deleteArticles?id=1 --&gt; DELETE /blog/Articles/1  删除一篇文章</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">GET /blog/getArticles --&gt; GET /blog/Articles  获取所有文章</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">GET /blog/addArticles --&gt; POST /blog/Articles  添加一篇文章</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">GET /blog/editArticles --&gt; PUT /blog/Articles  修改一篇文章 </span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292e" })}">GET /rest/api/deleteArticles?id=1 --&gt; DELETE /blog/Articles/1  删除一篇文章</span></span></code></pre></div></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("note/standard/restful.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const restful = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  restful as default
+};

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" id="fileInput">
+<progress id="uploadProgress" value="0" max="100"></progress>
+</body>
+
+
+<script>
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const xhr = new XMLHttpRequest();
+        const progressBar = document.getElementById('uploadProgress');
+
+        xhr.upload.addEventListener('progress', (e) => {
+            if (e.lengthComputable) {
+                const percent = (e.loaded / e.total) * 100;
+                progressBar.value = percent;
+                console.log(`上传进度: ${percent.toFixed(1)}%`);
+            }
+        });
+
+        xhr.addEventListener('load', () => {
+            console.log('上传完成');
+        });
+
+        xhr.open('POST', '/upload', true);
+        xhr.send(file);
+        //
+
+
+    });
+
+
+    const obj = {
+        a: 1,
+        b:2,
+        c:3,
+        sum(){
+            console.log(this);
+            return this.a + this.b;
+        }
+    }
+
+    const NewFn = obj.sum.bind({
+        a: 2,
+        b: 2,
+    },{b:3})
+
+    // const newObj = NewFn()
+
+    // console.log(newObj);
+
+
+    // console.log(obj.sum());
+
+
+    function multiply(a, b, c) {
+        return a - b + c;
+    }
+
+    const double = multiply.bind(null, 2);
+    console.log(double(5,1,2)); // 输出: 10
+
+
+
+</script>
+
+</html>

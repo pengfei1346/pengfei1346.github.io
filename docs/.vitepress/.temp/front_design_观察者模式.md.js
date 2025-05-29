@@ -1,0 +1,59 @@
+import { ssrRenderAttrs, ssrRenderStyle } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.cc2b3d55.js";
+const __pageData = JSON.parse('{"title":"观察者模式","description":"","frontmatter":{"isTimeLine":true,"title":"观察者模式","date":"2021-11-21T00:00:00.000Z","tags":["设计模式"]},"headers":[],"relativePath":"front/design/观察者模式.md","filePath":"front/design/观察者模式.md","lastUpdated":1700532797000}');
+const _sfc_main = { name: "front/design/观察者模式.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="观察者模式" tabindex="-1">观察者模式 <a class="header-anchor" href="#观察者模式" aria-label="Permalink to &quot;观察者模式&quot;">​</a></h1><blockquote><p>一个对象有一系列依赖于它的观察者（watcher），当对象发生变化时，会通知观察者进行更新</p></blockquote><p>应用案例：vue 双向绑定</p><div class="language-js vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#F97583" })}">let</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> data </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">=</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">  name: </span><span style="${ssrRenderStyle({ "color": "#9ECBFF" })}">&quot;ming&quot;</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">,</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">  age: </span><span style="${ssrRenderStyle({ "color": "#79B8FF" })}">18</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">};</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">Object.</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">keys</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(data).</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">forEach</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(</span><span style="${ssrRenderStyle({ "color": "#FFAB70" })}">key</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">=&gt;</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">  </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">let</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> value </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">=</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> data[key];</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">  Object.</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">defineProperty</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(data, key, {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">    </span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">get</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">() {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">      console.</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">log</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(</span><span style="${ssrRenderStyle({ "color": "#9ECBFF" })}">&quot;get&quot;</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">, value);</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">      </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">return</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> value;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">    },</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">    </span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">set</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(</span><span style="${ssrRenderStyle({ "color": "#FFAB70" })}">newValue</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">) {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">      console.</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">log</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(</span><span style="${ssrRenderStyle({ "color": "#9ECBFF" })}">&quot;更新&quot;</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">);</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">      value </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">=</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> newValue;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">    }</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">  });</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">});</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">data.name </span><span style="${ssrRenderStyle({ "color": "#F97583" })}">=</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}"> </span><span style="${ssrRenderStyle({ "color": "#9ECBFF" })}">&quot;佩奇&quot;</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">console.</span><span style="${ssrRenderStyle({ "color": "#B392F0" })}">log</span><span style="${ssrRenderStyle({ "color": "#E1E4E8" })}">(data.name);</span></span>
+<span class="line"></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#6A737D" })}">// 依次打印： 更新 → get 佩奇 → 佩奇</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="${ssrRenderStyle({ "color": "#D73A49" })}">let</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> data </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">=</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">  name: </span><span style="${ssrRenderStyle({ "color": "#032F62" })}">&quot;ming&quot;</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">,</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">  age: </span><span style="${ssrRenderStyle({ "color": "#005CC5" })}">18</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">};</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">Object.</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">keys</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(data).</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">forEach</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(</span><span style="${ssrRenderStyle({ "color": "#E36209" })}">key</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">=&gt;</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">  </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">let</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> value </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">=</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> data[key];</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">  Object.</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">defineProperty</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(data, key, {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">    </span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">get</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">() {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">      console.</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">log</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(</span><span style="${ssrRenderStyle({ "color": "#032F62" })}">&quot;get&quot;</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">, value);</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">      </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">return</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> value;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">    },</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">    </span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">set</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(</span><span style="${ssrRenderStyle({ "color": "#E36209" })}">newValue</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">) {</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">      console.</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">log</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(</span><span style="${ssrRenderStyle({ "color": "#032F62" })}">&quot;更新&quot;</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">);</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">      value </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">=</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> newValue;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">    }</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">  });</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">});</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">data.name </span><span style="${ssrRenderStyle({ "color": "#D73A49" })}">=</span><span style="${ssrRenderStyle({ "color": "#24292E" })}"> </span><span style="${ssrRenderStyle({ "color": "#032F62" })}">&quot;佩奇&quot;</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">;</span></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#24292E" })}">console.</span><span style="${ssrRenderStyle({ "color": "#6F42C1" })}">log</span><span style="${ssrRenderStyle({ "color": "#24292E" })}">(data.name);</span></span>
+<span class="line"></span>
+<span class="line"><span style="${ssrRenderStyle({ "color": "#6A737D" })}">// 依次打印： 更新 → get 佩奇 → 佩奇</span></span></code></pre></div><h2 id="观察者与发布订阅模式的区别" tabindex="-1">观察者与发布订阅模式的区别 <a class="header-anchor" href="#观察者与发布订阅模式的区别" aria-label="Permalink to &quot;观察者与发布订阅模式的区别&quot;">​</a></h2><p>观察者模式：观察者依附于对象本身，发布订阅模式则是 有一个事件处理中心，观察者和对象不知道彼此的存在。</p><ul><li>观察者模式：一个对象有一系列依赖于它的观察者（watcher），当对象发生变化时，会通知观察者进行更新</li><li>发布订阅模式：订阅者订阅相关主题，发布者通过发布主题事件的方式通知订阅该主题的对象，发布订阅模式中可以基于不同的主题去执行不同的自定义事件</li></ul></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("front/design/观察者模式.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const _____ = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  _____ as default
+};
