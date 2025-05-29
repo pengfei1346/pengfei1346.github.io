@@ -15,6 +15,15 @@ tags:
 **Webpack 慢的原因**
 Webpack 启动后会做一堆事情，经历一条很长的编译打包链条，从入口开始需要逐步经历语法解析、依赖收集、代码转译、打包合并、代码优化，最终将高版本的、离散的源码编译打包成低版本、高兼容性的产物代码，中间CPU、IO 操作过多，在 Node 运行时下性能必然是有问题。
 
+
+## webpack魔法注释
+
+https://blog.itpub.net/69992959/viewspace-2754851/
+
+## webpack一些配置实战
+
+https://blog.csdn.net/array__/article/details/134496709
+
 ## 基础
 
 微内核服务架构，就是一个打包工具。
